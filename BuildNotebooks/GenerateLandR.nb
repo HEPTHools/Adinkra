@@ -1,0 +1,329 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     12330,        321]
+NotebookOptionsPosition[     10657,        282]
+NotebookOutlinePosition[     11000,        297]
+CellTagsIndexPosition[     10957,        294]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+GenerateLandR.nb
+LTable and RTable are functions that take adinkra reduced transformation laws \
+and output L and R matrices.\
+\>", "Title",
+ CellChangeTimes->{{3.711374830942114*^9, 3.7113749352100773`*^9}, 
+   3.7371684756536455`*^9, 
+   3.7424010232780848`*^9},ExpressionUUID->"7d57a5eb-7c80-4faa-8b3e-\
+d431617b1cf1"],
+
+Cell[CellGroupData[{
+
+Cell["Easter Egg: used to plan hikes on the Appalachian trail", "Subsection",
+ CellChangeTimes->{{3.711374942930519*^9, 3.711374958614416*^9}, {
+  3.711375085349665*^9, 
+  3.711375085661683*^9}},ExpressionUUID->"9b753d07-dd42-45e0-a4f4-\
+f09a0b022f87"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"MetersToFeet", "[", "Meters_", "]"}], " ", ":=", " ", 
+   RowBox[{"Meters", "*", 
+    RowBox[{"39.4", "/", "12"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6748153013258066`*^9, 3.6748153230652723`*^9}, {
+  3.674815580471264*^9, 
+  3.674815584459345*^9}},ExpressionUUID->"5599e8cc-33d3-4643-a381-\
+668d3b83a2db"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+NColors[D,Phi] :-= the number of Supersymmetries encoded by the trasformation \
+law D[Phi]\
+\>", "Subsection",
+ CellChangeTimes->{{3.711374967341915*^9, 3.711375031399579*^9}, {
+   3.711375076362151*^9, 3.711375078459271*^9}, {3.711382753492974*^9, 
+   3.711382760313364*^9}, 
+   3.7113829005903873`*^9},ExpressionUUID->"4615686d-2460-476e-b147-\
+9114ea5c880b"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"NColors", "[", 
+   RowBox[{"D_", ",", "Phi_", ",", "Psi_"}], "]"}], ":=", " ", 
+  FractionBox[
+   RowBox[{
+    RowBox[{"Length", "[", 
+     RowBox[{"D", "[", 
+      RowBox[{"Phi", "[", 
+       RowBox[{"[", "1", "]"}], "]"}], "]"}], "]"}], " ", "+", " ", 
+    RowBox[{"Length", "[", 
+     RowBox[{"D", "[", 
+      RowBox[{"Psi", "[", 
+       RowBox[{"[", "1", "]"}], "]"}], "]"}], "]"}]}], "2"]}]], "Input",
+ CellChangeTimes->{{3.7113126912305827`*^9, 3.711312694131749*^9}, {
+  3.711312728651723*^9, 3.7113127848019347`*^9}, {3.711312880983436*^9, 
+  3.7113128883998604`*^9}, {3.7113129998492346`*^9, 3.7113130018933516`*^9}, {
+  3.711313044294777*^9, 3.7113131201541157`*^9}, {3.7113138467506747`*^9, 
+  3.7113138611694994`*^9}, {3.7113143675754642`*^9, 3.7113143760729504`*^9}, {
+  3.7113828784561214`*^9, 3.711382901034413*^9}, {3.7113829686392794`*^9, 
+  3.7113829697223415`*^9}, {3.7113833297689347`*^9, 
+  3.711383350175102*^9}},ExpressionUUID->"420ae0e8-2667-454f-a774-\
+7f90fc2a133e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "LTable[DColor,Phi,Psi] := L matrices that encode the supersymmetries of \
+DColor[Phi] and DColor[Psi]:  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["D", "I"], "\[CapitalPhi]"}], " ", "=", " ", 
+    RowBox[{"i", " ", 
+     SubscriptBox["R", "I"], "\[CapitalPsi]"}]}], TraditionalForm]],
+  ExpressionUUID->"35a605f4-16ab-4dcf-a5e7-29440419fb76"]
+}], "Subsection",
+ CellChangeTimes->{{3.7113750613582926`*^9, 3.711375164371185*^9}, {
+  3.737162564763266*^9, 3.737162564888578*^9}, {3.7371626151277514`*^9, 
+  3.7371626327544527`*^9}},ExpressionUUID->"77634172-115c-4a9a-b364-\
+647b530f9c6d"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"LTable", "[", 
+   RowBox[{"DColor_", ",", "Phi_", ",", "Psi_"}], "]"}], ":=", " ", 
+  RowBox[{
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Coefficient", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"DColor", "[", 
+         RowBox[{"Phi", "[", 
+          RowBox[{"[", "iRow", "]"}], "]"}], "]"}], "[", 
+        RowBox[{"[", "Color", "]"}], "]"}], ",", 
+       RowBox[{"I", "*", 
+        RowBox[{"Psi", "[", 
+         RowBox[{"[", "jhatColumn", "]"}], "]"}]}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"Color", ",", "1", ",", 
+       RowBox[{"NColors", "[", 
+        RowBox[{"DColor", ",", "Phi", ",", "Psi"}], "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"iRow", ",", "1", ",", 
+       RowBox[{"Length", "[", "Phi", "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"jhatColumn", ",", "1", ",", 
+       RowBox[{"Length", "[", "Psi", "]"}]}], "}"}]}], "]"}], "//", 
+   "Simplify"}]}]], "Input",
+ CellChangeTimes->{{3.7113125636052833`*^9, 3.711312594544053*^9}, {
+   3.711312869566783*^9, 3.711312872978978*^9}, {3.7113129252409678`*^9, 
+   3.7113129669923553`*^9}, {3.711313056662484*^9, 3.7113130588296084`*^9}, {
+   3.71131315536513*^9, 3.711313172078086*^9}, {3.7113132252061243`*^9, 
+   3.711313228182295*^9}, {3.7113133296761*^9, 3.7113133330752945`*^9}, {
+   3.711313367104241*^9, 3.7113133677102757`*^9}, 3.7113134645808163`*^9, {
+   3.7113138800355787`*^9, 3.7113138929583178`*^9}, {3.711314062450012*^9, 
+   3.7113140858313494`*^9}, {3.711314124742575*^9, 3.711314137554308*^9}, {
+   3.7113143858715105`*^9, 3.7113144007283607`*^9}, 3.711374001119651*^9, {
+   3.711374032539448*^9, 3.7113740337975197`*^9}, {3.711374078051051*^9, 
+   3.711374083753377*^9}, {3.711374117580312*^9, 3.7113741210385094`*^9}, 
+   3.7113829016974506`*^9, {3.7113835663344655`*^9, 3.7113835683875833`*^9}, {
+   3.711431611276754*^9, 3.711431612638832*^9}, {3.737162446610746*^9, 
+   3.7371624536270638`*^9}, {3.73716256924821*^9, 
+   3.7371625879375286`*^9}},ExpressionUUID->"c2a1c4bb-d88f-4abe-967e-\
+86620e6a63f9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "RTable[DColor,Phi,Psi] := R matrices that encode the supersymmetries of \
+DColor[Phi] and DColor[Psi]: ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["D", "I"], "\[CapitalPsi]"}], "=", " ", 
+    RowBox[{
+     SubscriptBox["L", "I"], 
+     OverscriptBox["\[CapitalPhi]", "."]}]}], TraditionalForm]],
+  ExpressionUUID->"36c270c0-2944-4003-ba93-b1204d13ed43"]
+}], "Subsection",
+ CellChangeTimes->{{3.7113750613582926`*^9, 3.711375134492476*^9}, {
+  3.71137516935747*^9, 3.711375181289152*^9}, {3.7371625917972636`*^9, 
+  3.7371626295508847`*^9}},ExpressionUUID->"6a898235-a08d-4774-ba9e-\
+43799324abb9"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"RTable", "[", 
+   RowBox[{"DColor_", ",", "Phi_", ",", "Psi_"}], "]"}], ":=", " ", 
+  RowBox[{
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Coefficient", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"DColor", "[", 
+         RowBox[{"Psi", "[", 
+          RowBox[{"[", "jhatRow", "]"}], "]"}], "]"}], "[", 
+        RowBox[{"[", "Color", "]"}], "]"}], ",", 
+       RowBox[{"D", "[", 
+        RowBox[{
+         RowBox[{"Phi", "[", 
+          RowBox[{"[", "iColumn", "]"}], "]"}], ",", "t"}], "]"}]}], "]"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"Color", ",", "1", ",", 
+       RowBox[{"NColors", "[", 
+        RowBox[{"DColor", ",", "Phi", ",", "Psi"}], "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"jhatRow", ",", "1", ",", 
+       RowBox[{"Length", "[", "Psi", "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"iColumn", ",", "1", ",", 
+       RowBox[{"Length", "[", "Phi", "]"}]}], "}"}]}], "]"}], "//", 
+   "Simplify"}]}]], "Input",
+ CellChangeTimes->{{3.711313442747567*^9, 3.711313460000554*^9}, {
+   3.7113135250262733`*^9, 3.7113135681267385`*^9}, {3.711313800116008*^9, 
+   3.7113138088595076`*^9}, {3.711313911682389*^9, 3.711313950913633*^9}, {
+   3.711313987617732*^9, 3.7113139946961365`*^9}, {3.7113140372695723`*^9, 
+   3.71131405209842*^9}, {3.711314153772236*^9, 3.7113141760695105`*^9}, {
+   3.711314264112547*^9, 3.7113142670697155`*^9}, {3.7113742062953863`*^9, 
+   3.711374277752473*^9}, 3.7113829022514825`*^9, {3.711383570363696*^9, 
+   3.7113835717627764`*^9}, {3.711430831007125*^9, 3.711430834646333*^9}, {
+   3.737162594391366*^9, 
+   3.737162631738843*^9}},ExpressionUUID->"3b9a9c26-d54c-4976-bca6-\
+9ada945bbf42"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+GenerateLandR[DColor_,Phi_,Psi_,Rep_]:= processes the LTable and RTable, \
+storing the results into L[Rep] and R[Rep]\
+\>", "Subsection",
+ CellChangeTimes->{{3.731374895388669*^9, 3.7313749463011556`*^9}, {
+  3.731375294951954*^9, 3.7313752958113995`*^9}, {3.7371625142583623`*^9, 
+  3.7371625143989677`*^9}},ExpressionUUID->"8fbbcb8a-d9f0-4789-bd14-\
+2f2b3bc6955c"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"GenerateLandR", "[", 
+   RowBox[{"DColor_", ",", "Phi_", ",", "Psi_", ",", "Rep_"}], "]"}], ":=", 
+  " ", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"L", "[", "Rep", "]"}], " ", "=", " ", 
+     RowBox[{"LTable", "[", 
+      RowBox[{"DColor", ",", "Phi", ",", "Psi"}], "]"}]}], ";", " ", 
+    RowBox[{
+     RowBox[{"R", "[", "Rep", "]"}], " ", "=", " ", 
+     RowBox[{"RTable", "[", 
+      RowBox[{"DColor", ",", "Phi", ",", "Psi"}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"StringJoin", "[", 
+     RowBox[{"\"\<L and R are loaded for Rep = \>\"", ",", 
+      RowBox[{"ToString", "[", "Rep", "]"}]}], "]"}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.7313749480824747`*^9, 3.7313749940051374`*^9}, {
+   3.7313751008629236`*^9, 3.7313751295426836`*^9}, {3.731375185460055*^9, 
+   3.7313751955554466`*^9}, {3.7313756208258905`*^9, 3.731375632749507*^9}, 
+   3.7313757864777217`*^9, {3.7371625254781923`*^9, 
+   3.737162525587508*^9}},ExpressionUUID->"76ed6438-5f84-458b-9fd2-\
+bbbd751b0f22"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+FunctionList[GenerateLandR]: list of functions encoded in this notebook\
+\>", "Section",
+ CellChangeTimes->{{3.7113754521696463`*^9, 
+  3.71137547217879*^9}},ExpressionUUID->"a35af453-55aa-4bab-a5bc-\
+3aea1f17564c"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"FunctionList", "[", "GenerateLandR", "]"}], " ", "=", " ", 
+  "\"\<NColors[D,Phi,Psi], LTable[DColor,Phi,Psi], \
+RTable[DColor,Phi,Psi],GenerateLandR[DColor,Phi,Psi,Rep]\n\n\
+******************************************************************************\
+**********\n\
+******************************************************************************\
+**********\>\""}]], "Input",
+ CellChangeTimes->{{3.711375474649932*^9, 3.711375549743227*^9}, 
+   3.7113829035315557`*^9, {3.711383811929513*^9, 3.7113838124315414`*^9}, 
+   3.737168486232872*^9, {3.7371685544591*^9, 3.7371685713045526`*^9}, 
+   3.74240102758012*^9, {3.7500842106067033`*^9, 
+   3.7500842114740553`*^9}},ExpressionUUID->"282486a6-c5a8-4b07-86f9-\
+879a0998ce40"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1920, 997},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 331, 8, 216, "Title",ExpressionUUID->"7d57a5eb-7c80-4faa-8b3e-d431617b1cf1"],
+Cell[CellGroupData[{
+Cell[936, 34, 252, 4, 53, "Subsection",ExpressionUUID->"9b753d07-dd42-45e0-a4f4-f09a0b022f87"],
+Cell[1191, 40, 361, 9, 28, "Input",ExpressionUUID->"5599e8cc-33d3-4643-a381-668d3b83a2db"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1589, 54, 371, 8, 53, "Subsection",ExpressionUUID->"4615686d-2460-476e-b147-9114ea5c880b"],
+Cell[1963, 64, 1027, 22, 52, "Input",ExpressionUUID->"420ae0e8-2667-454f-a774-7f90fc2a133e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3027, 91, 634, 15, 53, "Subsection",ExpressionUUID->"77634172-115c-4a9a-b364-647b530f9c6d"],
+Cell[3664, 108, 2075, 43, 28, "Input",ExpressionUUID->"c2a1c4bb-d88f-4abe-967e-86620e6a63f9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5776, 156, 643, 16, 53, "Subsection",ExpressionUUID->"6a898235-a08d-4774-ba9e-43799324abb9"],
+Cell[6422, 174, 1714, 40, 28, "Input",ExpressionUUID->"3b9a9c26-d54c-4976-bca6-9ada945bbf42"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8173, 219, 376, 7, 53, "Subsection",ExpressionUUID->"8fbbcb8a-d9f0-4789-bd14-2f2b3bc6955c"],
+Cell[8552, 228, 1050, 24, 48, "Input",ExpressionUUID->"76ed6438-5f84-458b-9fd2-bbbd751b0f22"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9639, 257, 225, 5, 67, "Section",ExpressionUUID->"a35af453-55aa-4bab-a5bc-3aea1f17564c"],
+Cell[9867, 264, 762, 14, 86, "Input",ExpressionUUID->"282486a6-c5a8-4b07-86f9-879a0998ce40"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
