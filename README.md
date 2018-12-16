@@ -4,11 +4,8 @@ Download [Adinkra.m](https://raw.githubusercontent.com/kstiffle/hello-world/mast
 
 The tutorial [AdinkraTutorial.nb](https://raw.githubusercontent.com/kstiffle/hello-world/master/AdinkraTutorial.nb) shows in depth how to use many of the tools of the Adinkra.m package listed below on this page. 
 
-```markdown
 
-Intallation: after downloading Adinkra.m](https://raw.githubusercontent.com/kstiffle/hello-world/master/Adinkra.m), install the package via the File->Install menu in Mathematica
-
-```
+Intallation: after downloading [Adinkra.m](https://raw.githubusercontent.com/kstiffle/hello-world/master/Adinkra.m), install the package via the File->Install menu in Mathematica
 
 ![FileInstall.jpg](https://github.com/HEPTHools/Adinkra/blob/master/Images/FileInstall.jpg)
 
