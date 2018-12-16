@@ -1,6 +1,23 @@
 ## Welcome to the Adinkra Repository
 
-Download [Adinkra.m](https://raw.githubusercontent.com/kstiffle/hello-world/master/Adinkra.m) by right (command) clicking and saving [this link](https://raw.githubusercontent.com/kstiffle/hello-world/master/Adinkra.m) and download [AdinkraTutorial.nb](https://raw.githubusercontent.com/kstiffle/hello-world/master/AdinkraTutorial.nb) by right (command) clicking and saving [this link](https://raw.githubusercontent.com/kstiffle/hello-world/master/AdinkraTutorial.nb)
+Download [Adinkra.m](https://raw.githubusercontent.com/kstiffle/hello-world/master/Adinkra.m) by right (command) clicking and saving [this link](https://raw.githubusercontent.com/kstiffle/hello-world/master/Adinkra.m) and download [AdinkraTutorial.nb](https://raw.githubusercontent.com/kstiffle/hello-world/master/AdinkraTutorial.nb) by right (command) clicking and saving [this link](https://raw.githubusercontent.com/kstiffle/hello-world/master/AdinkraTutorial.nb). On MAC, you may have to delete a .txt extension from AdinkraTutorial.nb
+
+The tutorial [AdinkraTutorial.nb](https://raw.githubusercontent.com/kstiffle/hello-world/master/AdinkraTutorial.nb) shows in depth how to use many of the tools of the Adinkra.m package listed below on this page. 
+
+```markdown
+
+Intallation: after downloading Adinkra.m](https://raw.githubusercontent.com/kstiffle/hello-world/master/Adinkra.m), install the package via the File->Install menu in Mathematica
+
+```
+
+FileInstall picture
+
+In the "Source" dropdown menu, select "From File..."
+
+FromFile picture
+
+Navigate to where you downloaded "Adinkra.m" on you local machine, select it and click "ok".
+
 
 The Adinkra.m package includes tools to
 
@@ -15,7 +32,7 @@ The Adinkra.m package includes tools to
 
 ```
 
-Intallation step
+
 
 ```markdown
 
