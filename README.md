@@ -10,7 +10,9 @@ Intallation: after downloading Adinkra.m](https://raw.githubusercontent.com/ksti
 
 ```
 
-FileInstall picture
+![FileInstall.jpg](https://github.com/HEPTHools/Adinkra/blob/master/Images/FileInstall.jpg)
+
+
 
 In the "Source" dropdown menu, select "From File..."
 
