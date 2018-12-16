@@ -7,7 +7,7 @@ Download [Adinkra.m](https://raw.githubusercontent.com/kstiffle/hello-world/mast
 The tutorial [AdinkraTutorial.nb](https://raw.githubusercontent.com/kstiffle/hello-world/master/AdinkraTutorial.nb) shows in depth how to use many of the tools of the Adinkra.m package listed below on this page. 
 
 
-**Intallation:** after downloading [Adinkra.m](https://raw.githubusercontent.com/kstiffle/hello-world/master/Adinkra.m), install it via the File->Install menu in Mathematica
+**Intallation:** after downloading [Adinkra.m](https://raw.githubusercontent.com/kstiffle/hello-world/master/Adinkra.m), install it via the File->Install menu in Mathematica.
 
 ![FileInstall.jpg](https://github.com/HEPTHools/Adinkra/blob/master/Images/FileInstall.jpg)
 
@@ -19,7 +19,9 @@ Navigate to where you downloaded "Adinkra.m" on you local machine, select it and
 
 ![ImportAdinkra.jpg](https://github.com/HEPTHools/Adinkra/blob/master/Images/ImportAdinkra.jpg)
 
-The date of the latest build, in yymmdd format, can be called by running, for example
+ **If updated from an old version of Adinkra.m, you may have to delete the old package first. Run [DeleteAdinkra.nb]() to delete an existing Adinkra package** 
+ 
+ The date of the latest build, in yymmdd format, can be called by running, for example
 
 ![BuildDate.jpg](https://github.com/HEPTHools/Adinkra/blob/master/Images/BuildDate.jpg)
 
