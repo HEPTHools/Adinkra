@@ -1,6 +1,6 @@
 ## Welcome to the Adinkra Repository!
 
-![EMExtended](Adinkra/Images/CMExtended.jpg)
+![EMExtended](https://github.com/HEPTHools/Adinkra/blob/master/Images/CMExtended.jpg)
 
 Download [Adinkra.m](https://raw.githubusercontent.com/kstiffle/hello-world/master/Adinkra.m) by right (command) clicking and saving [this link](https://raw.githubusercontent.com/kstiffle/hello-world/master/Adinkra.m) and download [AdinkraTutorial.nb](https://raw.githubusercontent.com/kstiffle/hello-world/master/AdinkraTutorial.nb) by right (command) clicking and saving [this link](https://raw.githubusercontent.com/kstiffle/hello-world/master/AdinkraTutorial.nb). On MAC, you may have to delete a .txt extension from AdinkraTutorial.nb.
 
@@ -13,15 +13,15 @@ The tutorial [AdinkraTutorial.nb](https://raw.githubusercontent.com/kstiffle/hel
 
 In the "Source" dropdown menu, select "From File..."
 
-![FromFile.jpg](https://github.com/HEPTHools/Adinkra/blob/master/Images//FromFile.jpg)
+![FromFile.jpg](https://github.com/HEPTHools/Adinkra/blob/master/Images/FromFile.jpg)
 
 Navigate to where you downloaded "Adinkra.m" on you local machine, select it and click "ok". Import the package into a notebook as follows:
 
-![ImportAdinkra.jpg](Adinkra/Images/ImportAdinkra.jpg)
+![ImportAdinkra.jpg](https://github.com/HEPTHools/Adinkra/blob/master/Images/ImportAdinkra.jpg)
 
 The date of the latest build, in yymmdd format, can be called by running, for example
 
-![BuildDate.jpg](Adinkra/Images/BuildDate.jpg)
+![BuildDate.jpg](https://github.com/HEPTHools/Adinkra/blob/master/Images/BuildDate.jpg)
 
 **About the Adinkra.m package**
 
@@ -42,8 +42,8 @@ The Adinkra.m package includes tools to
 
 The list of functions can be found by running
 
-![FunctionList1.jpg](Adinkra/Images/FunctionList1.jpg)
-![FunctionList2.jpg](Adinkra/Images/FunctionList2.jpg)
+![FunctionList1.jpg](https://github.com/HEPTHools/Adinkra/blob/master/Images/FunctionList1.jpg)
+![FunctionList2.jpg](https://github.com/HEPTHools/Adinkra/blob/master/Images/FunctionList2.jpg)
 
 In the above list, the functions are organized in terms of the notebooks with which they are created.
 
