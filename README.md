@@ -19,7 +19,7 @@ Navigate to where you downloaded "Adinkra.m" on you local machine, select it and
 
 ![ImportAdinkra.jpg](https://github.com/HEPTHools/Adinkra/blob/master/Images/ImportAdinkra.jpg)
 
- **If updated from an old version of Adinkra.m, you may have to delete the old package first. Run [DeleteAdinkra.nb]() to delete an existing Adinkra package** 
+ **If updated from an old version of Adinkra.m, you may have to delete the old package first. Run [DeleteAdinkra.nb](https://raw.githubusercontent.com/HEPTHools/Adinkra/master/DeleteAdinkra.nb) to delete an existing Adinkra package** 
  
  The date of the latest build, in yymmdd format, can be called by running, for example
 
