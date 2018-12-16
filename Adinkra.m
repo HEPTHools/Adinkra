@@ -2719,6 +2719,13 @@ ConstructVtildePMBasis[pm_][Rep_][Ii_, Ji_] := If[VtildePMCString[Rep] != "",
  
 coordinates = {t, x, y, z}
  
+DeletewlString[MAC] = 
+    "C:\\Users\\kstiffle\\AppData\\Roaming\\Mathematica/Applications/Adinkra.\
+wl"
+ 
+DeletewlString[PC] = "C:\\Users\\kstiffle\\AppData\\Roaming\\Mathematica\\App\
+lications\\Adinkra.wl"
+ 
 DOWN = 2
  
 ell[Rep_][TildeIndex_, ahat_][Ii_, Ji_] := 
