@@ -574,16 +574,17 @@ LinearlyIndependent[Vmat_] :=
              Vmat]}] == 0, cList]; (cTable /. cSoln[Vmat][[1]]) == 
         cLinearlyIndependent}[[1]]
  
-AllZetaGenNonSingular[Rep_] := Table[Det[ZetaGen[Rep][[Ii]]] == 0, 
-      {Ii, 1, NColors[Rep]}] == Table[False, {Ii, 1, NColors[Rep]}]
+AllZetaGenNonSingular[Rep_] := Simplify[Table[Det[ZetaGen[Rep][[Ii]]] == 0, 
+       {Ii, 1, NColors[Rep]}] == Table[False, {Ii, 1, NColors[Rep]}]]
  
 NumDistinctHoloOrMono[HoloOrMono_, Rep_] := 
     If[AllZetatildeGenNonSingular[Rep], HoldForm[2]^
       (N - (Log[2, Length[ListOfIdenticalMonoOrHolo[HoloOrMono, Rep]]] - 
         NColors[Rep])), Print["Zeta or Zetatilde has singular elements"]]
  
-AllZetatildeGenNonSingular[Rep_] := Table[Det[ZetatildeGen[Rep][[Ii]]] == 0, 
-      {Ii, 1, NColors[Rep]}] == Table[False, {Ii, 1, NColors[Rep]}]
+AllZetatildeGenNonSingular[Rep_] := 
+    Simplify[Table[Det[ZetatildeGen[Rep][[Ii]]] == 0, 
+       {Ii, 1, NColors[Rep]}] == Table[False, {Ii, 1, NColors[Rep]}]]
  
 ListOfIdenticalMonoOrHolo[MonoOrHolo_, Rep_] := 
     If[AllZetatildeGenNonSingular[Rep], 
