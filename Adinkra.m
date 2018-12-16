@@ -1510,7 +1510,7 @@ BosonGadget[Rep1_, Rep2_] := Simplify[
       (-(1/VScaleFactor^2))*Sum[Tr[V[Rep1][[Ii,Ji]] . V[Rep2][[Ii,Ji]]], 
        {Ii, 1, NColors[Rep1]}, {Ji, 1, NColors[Rep1]}]]
  
-BuildDate[Adinkra] = 181215
+BuildDate[Adinkra] = 181216
  
 buildrules[list_] := Module[{rules = {}, layerlengths := 
        Map[Length, list, {1}]}, For[i = 1, i <= Length[list], i++, 
