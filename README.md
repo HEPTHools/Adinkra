@@ -1,4 +1,4 @@
-## Welcome to the Adinkra Repository!
+## Adinkra Repository
 
 ![EMExtended](https://github.com/HEPTHools/Adinkra/blob/master/Images/CMExtended.jpg)
 
