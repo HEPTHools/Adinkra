@@ -26,7 +26,7 @@ In the "Source" dropdown menu, select "From File..."
 
 Navigate to where you downloaded "Adinkra.m" on you local machine, select it and click "ok". Import the package into a notebook as follows:
 
-![ImportAdinkra.jpg](/ImportAdinkra.jpg)
+![ImportAdinkra.jpg](/Images/ImportAdinkra.jpg)
 
  **If updated from an old version of Adinkra.m, you may have to delete the old package first. Run [DeleteAdinkra.nb](https://raw.githubusercontent.com/HEPTHools/Adinkra/master/DeleteAdinkra.nb) to delete an existing Adinkra package** 
  
