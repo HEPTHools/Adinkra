@@ -1,9 +1,7 @@
 ## Adinkra Repository
-``` markdown
 
-![EMExtended](https://github.com/HEPTHools/Adinkra/blob/master/Images/CMExtended.jpg)
+![https://github.com/HEPTHools/Adinkra/blob/master/Images/CMExtended.jpg](https://github.com/HEPTHools/Adinkra/blob/master/Images/CMExtended.jpg)
 
-```
 
 **Files Associated with the Adinkra repository**
 
