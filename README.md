@@ -1,3 +1,5 @@
+var conv = new showdown.Converter({parseImgDimensions: true});
+
 ![CMExtended.jpg](/Images/CMExtended.jpg =250x250)
 
 # Files Associated with the Adinkra repository
