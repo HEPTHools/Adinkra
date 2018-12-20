@@ -1,6 +1,4 @@
-![https://github.com/HEPTHools/Adinkra/blob/master/Images/CMExtended.jpg](https://github.com/HEPTHools/Adinkra/blob/master/Images/CMExtended.jpg)
-
-![CMExtended](/Images/CMExtended.jpg)
+![CMExtended.jpg](/Images/CMExtended.jpg)
 
 # Files Associated with the Adinkra repository
 
@@ -20,21 +18,21 @@ Right (command) click on [Adinkra.m](https://raw.githubusercontent.com/kstiffle/
 ## Installation Instructions
 After downloading, install the Adinkra.m package on your local machine with the File-->Install menu in Mathematica
 
-![FileInstall.jpg](https://github.com/HEPTHools/Adinkra/blob/master/Images/FileInstall.jpg)
+![FileInstall.jpg](/Images/FileInstall.jpg)
 
 In the "Source" dropdown menu, select "From File..."
 
-![FromFile.jpg](https://github.com/HEPTHools/Adinkra/blob/master/Images/FromFile.jpg)
+![FromFile.jpg](/Images/FromFile.jpg)
 
 Navigate to where you downloaded "Adinkra.m" on you local machine, select it and click "ok". Import the package into a notebook as follows:
 
-![ImportAdinkra.jpg](https://github.com/HEPTHools/Adinkra/blob/master/Images/ImportAdinkra.jpg)
+![ImportAdinkra.jpg](/ImportAdinkra.jpg)
 
  **If updated from an old version of Adinkra.m, you may have to delete the old package first. Run [DeleteAdinkra.nb](https://raw.githubusercontent.com/HEPTHools/Adinkra/master/DeleteAdinkra.nb) to delete an existing Adinkra package** 
  
  The date of the latest build, in yymmdd format, can be called by running, for example
 
-![BuildDate.jpg](https://github.com/HEPTHools/Adinkra/blob/master/Images/BuildDate.jpg)
+![BuildDate.jpg](/Images/BuildDate.jpg)
 
 # About the Adinkra.m package
 
