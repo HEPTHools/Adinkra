@@ -1,4 +1,4 @@
-![CMExtended.jpg](/Images/CMExtended.jpg)
+![CMExtended.jpg](/Images/CMExtended.jpg | width = 100)
 
 # Files Associated with the Adinkra repository
 
