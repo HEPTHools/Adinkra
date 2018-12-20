@@ -4,9 +4,9 @@ var conv = new showdown.Converter({parseImgDimensions: true});
 
 # Files Associated with the Adinkra repository
 
-[Adinkra.m](https://raw.githubusercontent.com/kstiffle/hello-world/master/Adinkra.m): mathematica package with tools to research adinkras
+* [Adinkra.m](https://raw.githubusercontent.com/kstiffle/hello-world/master/Adinkra.m): mathematica package with tools to research adinkras
 
-[AdinkraTutorial.nb](https://raw.githubusercontent.com/kstiffle/hello-world/master/AdinkraTutorial.nb): tutorial notebook file with examples on how to use the various functions of the Adinkra.m package.
+* [AdinkraTutorial.nb](https://raw.githubusercontent.com/kstiffle/hello-world/master/AdinkraTutorial.nb): tutorial notebook file with examples on how to use the various functions of the Adinkra.m package.
 
 
 
