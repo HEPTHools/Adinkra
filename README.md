@@ -51,7 +51,11 @@ The Adinkra.m package includes tools to
 
 
 
-The list of functions can be found by running FunctionList[Adinkra]. The list of functions is separated into their 
+The list of functions can be found by running 
+
+FunctionList[Adinkra] 
+
+which outputs the following:
 
 ```markdown
 
@@ -197,6 +201,8 @@ ExportAdinkra[L,BuildRules[list],filename]
 
 ```
 
-In the above list, the functions are organized in terms of the notebooks with which they are created.
+In the above list, the functions are organized in terms of the notebooks with which they are created. The FunctionList for each sub-notebook may be called independently. If for instance just a list of GraphingTools is desired, run
+
+FunctionList[GraphingTools]
 
 
