@@ -52,7 +52,9 @@ The Adinkra.m package includes tools to
 
 The list of functions can be found by running FunctionList[Adinkra]. The list of functions is separated into their 
 
-"SpaceTime:
+```markdown
+
+SpaceTime:
 IndexRange[SpaceTime][Index], Index = mu, a, or RaiseCode
 
 coordinates, \[CapitalStigma][mu], \[Eta][mu,nu], Cmetric[[a,b]], \
@@ -61,8 +63,6 @@ UP, DOWN, RaiseSTIndex[Field,RaiseCode1,RaiseCode2,...,RaiseCoden], \
 RaiseFermionIndex[Field]
 
 ****************************************************************************************
-\
-
 ****************************************************************************************
 
 GenerateLandR:
@@ -70,8 +70,6 @@ NColors[D,Phi,Psi], LTable[DColor,Phi,Psi], \
 RTable[DColor,Phi,Psi],GenerateLandR[DColor,Phi,Psi,Rep]
 
 ****************************************************************************************
-\
-
 ****************************************************************************************
 
 AdinkraEssentials:
@@ -130,8 +128,6 @@ VtildePM[pm][Rep], VsoNPM[pm][Rep], VtildesoNPM[pm][Rep] \
 cSoln[V[Rep]], cSoln[Vtilde[Rep]]
 
 ****************************************************************************************
-\
-
 ****************************************************************************************
 
 BasisDecomposition:
@@ -164,8 +160,6 @@ PrintVtildePMBasis[pm][Rep][II,JJ], PrintLSigmaProduct[Rep], \
 PrintRSigmaProduct[Rep]
 
 ****************************************************************************************
-\
-
 ****************************************************************************************
 
 BC4Tools:
@@ -186,8 +180,6 @@ HList,S3List,VierList,PrintBC4Perm[n,a,\[Mu],A],PrintBC4BosonPerm[n,a,\
 A],L[Q],L[Qtilde],L[RepCode]
 
 ****************************************************************************************
-\
-
 ****************************************************************************************
 
 GraphingTools:
@@ -199,9 +191,9 @@ GraphAdinkra[L], GraphAdinkra[L,BuildRules[list], \
 ExportAdinkra[L,BuildRules[list],filename]
 
 ****************************************************************************************
-\
+****************************************************************************************
 
-****************************************************************************************"
+```
 
 In the above list, the functions are organized in terms of the notebooks with which they are created.
 
