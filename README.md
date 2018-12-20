@@ -1,4 +1,4 @@
-![CMExtended.jpg](/Images/CMExtended.jpg =250x)
+![CMExtended.jpg](/Images/CMExtended.jpg){:height="36px" width="36px"}.
 
 # Files Associated with the Adinkra repository
 
