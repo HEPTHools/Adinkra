@@ -2,12 +2,20 @@
 
 ![EMExtended](https://github.com/HEPTHools/Adinkra/blob/master/Images/CMExtended.jpg)
 
-Download [Adinkra.m](https://raw.githubusercontent.com/kstiffle/hello-world/master/Adinkra.m) by right (command) clicking and saving [this link](https://raw.githubusercontent.com/kstiffle/hello-world/master/Adinkra.m) and download [AdinkraTutorial.nb](https://raw.githubusercontent.com/kstiffle/hello-world/master/AdinkraTutorial.nb) by right (command) clicking and saving [this link](https://raw.githubusercontent.com/kstiffle/hello-world/master/AdinkraTutorial.nb). On MAC, you may have to delete a .txt extension from AdinkraTutorial.nb.
+**Files Associated with the Adinkra repository**
+
+[Adinkra.m](https://raw.githubusercontent.com/kstiffle/hello-world/master/Adinkra.m): mathematica package with tools to research adinkras
+
+[AdinkraTutorial.nb](https://raw.githubusercontent.com/kstiffle/hello-world/master/AdinkraTutorial.nb): tutorial notebook file with examples on how to use the various functions of the Adinkra.m package.
+
+
 
 The tutorial [AdinkraTutorial.nb](https://raw.githubusercontent.com/kstiffle/hello-world/master/AdinkraTutorial.nb) shows in depth how to use many of the tools of the Adinkra.m package listed below on this page. 
 
 
-**Intallation:** after downloading [Adinkra.m](https://raw.githubusercontent.com/kstiffle/hello-world/master/Adinkra.m), install it via the File->Install menu in Mathematica.
+**Download Instructions:** Right (command) click on [Adinkra.m](https://raw.githubusercontent.com/kstiffle/hello-world/master/Adinkra.m) and  [AdinkraTutorial.nb](https://raw.githubusercontent.com/kstiffle/hello-world/master/AdinkraTutorial.nb) to save to you local hard drive. You may have to delete a .txt extension from AdinkraTutorial.nb.after download.
+
+**Installation Instructions** After downloading, install the Adinkra.m package on your local machine with the File-->Install menu in Mathematica
 
 ![FileInstall.jpg](https://github.com/HEPTHools/Adinkra/blob/master/Images/FileInstall.jpg)
 
@@ -42,10 +50,158 @@ The Adinkra.m package includes tools to
 
 
 
-The list of functions can be found by running
+The list of functions can be found by running FunctionList[Adinkra]. The list of functions is separated into their 
 
-![FunctionList1.jpg](https://github.com/HEPTHools/Adinkra/blob/master/Images/FunctionList1.jpg)
-![FunctionList2.jpg](https://github.com/HEPTHools/Adinkra/blob/master/Images/FunctionList2.jpg)
+"SpaceTime:
+IndexRange[SpaceTime][Index], Index = mu, a, or RaiseCode
+
+coordinates, \[CapitalStigma][mu], \[Eta][mu,nu], Cmetric[[a,b]], \
+InverseCmetric[[a,b]], UD[Field,\[CapitalStigma][mu]] , Lap[Field], \
+UP, DOWN, RaiseSTIndex[Field,RaiseCode1,RaiseCode2,...,RaiseCoden], \
+RaiseFermionIndex[Field]
+
+****************************************************************************************
+\
+
+****************************************************************************************
+
+GenerateLandR:
+NColors[D,Phi,Psi], LTable[DColor,Phi,Psi], \
+RTable[DColor,Phi,Psi],GenerateLandR[DColor,Phi,Psi,Rep]
+
+****************************************************************************************
+\
+
+****************************************************************************************
+
+AdinkraEssentials:
+IndexRange[AdinkraEssentials][Index], Index = p1, II, ReportLevel, or \
+pm
+
+***IMPORTANT****: Default Settings are VScaleFactor = \
+VtildeScaleFactor = -I, VsoNScaleFactor = -I/(2 VsoNScaleFactor), \
+VtildesoNScaleFactor = -I/(2 VtildesoNScaleFactor)
+
+Reports: AdinkraReport[Rep,ReportLevel], \
+AdinkraPreliminaryReport[L,R], AdinkraPreliminaryReport[Rep], \
+AdinkraPreliminaryReportO[Rep], AdinkraHoloMonoReport[Rep], \
+AdinkraSummaryReport[Rep], AdinkraFullReport[Rep]
+
+Basic Functions: nMatrices[Matrices], nRows[Matrices], \
+nColumns[Matrices], Commute[Matrix1,Matrix2], NColors[Rep], \
+NColors[L,R], dmin[N], dbosons[Rep], dbosons[L,R], dfermions[Rep], \
+dfermions[L,R], WordW[{p1,p2,...,pN}]
+
+Intense Calculations: Gadget[Rep1,Rep2], BosonGadget[Rep1,Rep2], \
+ListOfIdenticalMonoOrHolo[MonoOrHolo,Rep], \
+NumDistinctHoloOrMono[HoloOrMono,Rep]
+
+Print Functions: PrintL[Rep][II], PrintR[Rep][II], \
+PrintGALR[Rep][II,JJ], PrintGARL[Rep][II,JJ], PrintV[Rep][II,JJ], \
+PrintVtilde[Rep][II,JJ], PrintZetaGen[Rep][II], \
+PrintHoloraumy[Rep][{p1,p2,...,pN}], \
+PrintMonodromy[Rep][{p1,p2,...,pN}],PrintZetatildeGen[Rep][II], \
+PrintHoloraumytilde[Rep][{p1,p2,...,pN}], \
+PrintMonodromytilde[Rep][{p1,p2,...,pN}], \
+PrintVtildePM[pm][Rep][II,JJ], PrintVtildePM[pm][Rep][II,JJ], \
+PrintAllL[Rep], PrintAllR[Rep], PrintAllGALR[Rep], PrintAllGARL[Rep], \
+PrintAllV[Rep], PrintAllVtilde[Rep], PrintAllZetaGen[Rep], \
+PrintAllHoloraumy[Rep], \
+PrintAllMonodromy[Rep],PrintAllZetatildeGen[Rep], \
+PrintAllHoloraumytilde[Rep], PrintAllMonodromytilde[Rep], \
+PrintAllVtildePM[pm][Rep], PrintAllVtildePM[pm][Rep], \
+,PrintSigmaProduct[Matrix], PrintLSigmaProduct[Rep], \
+PrintRSigmaProduct[Rep]
+
+Test Functions: CorrectDimensions[Rep], CorrectDimensions[L,R], \
+TransposeTest[Rep], TransposeTest[L,R], InverseTest[Rep], \
+InverseTest[L,R], RO[Rep], Chi0Report[L,R], GATest[Rep], GATest[L,R], \
+soNTest[Matrices], su2Test[MgenPM[pm]][Rep], \
+MutuallyCommuteTest[M1,M2], LinearlyIndependent[Mgen]
+
+Data generated by GenerateAdinkraData[Rep], \
+GenerateAdinkraData[Rep,Orthogonal], GenerateAdinkraDataO[Rep], \
+GenerateAdinkraData[Rep,L], or GenerateAdinkraData[Rep,L,R]:
+L[Rep], R[Rep], GALR[Rep], GARL[Rep], chi0[Rep], ncis[Rep], \
+ntrans[Rep], V[Rep], Vtilde[Rep], VsoN[Rep], VtildesoN[Rep], \
+ZetaGen[Rep], Holoraumy[Rep], Monodromy[Rep], ZetatildeGen[Rep], \
+Holoraumytilde[Rep], Monodromytilde[Rep], VPM[pm][Rep], \
+VtildePM[pm][Rep], VsoNPM[pm][Rep], VtildesoNPM[pm][Rep] \
+cSoln[V[Rep]], cSoln[Vtilde[Rep]]
+
+****************************************************************************************
+\
+
+****************************************************************************************
+
+BasisDecomposition:
+IndexRange[BasisDecomposition][Index], Index = mu, ahat, a, d, or n
+
+General Matrix Tools:
+sigma[mu], \[Alpha]matrix[ahat], \[Beta]matrix[ahat], \
+SigmaProduct[mu1,mu2,...,mun], SigmaProductMF[mu1,mu2,...,mun], \
+SigmaMatrixProduct[mu,AnyMatrix], \[Rho]matrix[mu,nu], \
+\[Omega]matrix[n][a], Basis[d][a,mu,nu], TestOrthogonal\[Sigma], Test\
+\[Rho]Orthogonal, Test\[Omega]Orthogonal[n], TestBasisOrthogonal[d], \
+Coeffs[d][Matrix][a,mu,nu]
+
+GenerateCoeffs[Rep] generates adinkra representation specific \
+functions:
+LCoeffs[Rep][II], CheckLCoeffs[Rep], RCoeffs[Rep][II], \
+CheckRCoeffs[Rep], VCoeffs[Rep][II,JJ], CheckVCoeffs[Rep], \
+VtildeCoeffs[Rep][II,JJ], CheckVtildeCoeffs[Rep], \
+VPMCoeffs[pm][Rep][II,JJ], CheckVPMCoeffs[pm][Rep], \
+VtildePMCoeffs[pm][Rep][II,JJ], CheckVtildePMCoeffs[pm][Rep], \
+NumberNonZero[LCoeffsMat], CoeffsSummaryReport[Rep], \
+CoeffsFullReport[Rep_]
+
+Print Functions:
+ PrintSigmaProduct[Matrix], PrintBasis[Matrix], PrintLBasis[Rep][II], \
+PrintRBasis[Rep][II], PrintGALRBasis[Rep][II,JJ], \
+PrintGARLBasis[Rep][II,JJ], PrintVBasis[Rep][II,JJ], \
+PrintVtildeBasis[Rep][II,JJ], PrintVPMBasis[pm][Rep][II,JJ], \
+PrintVtildePMBasis[pm][Rep][II,JJ], PrintLSigmaProduct[Rep], \
+PrintRSigmaProduct[Rep]
+
+****************************************************************************************
+\
+
+****************************************************************************************
+
+BC4Tools:
+
+IndexRange[BC4Tools][Index], Index = n, a, \[Mu], A, II, or tt
+
+Functions: 
+HPerm[a], H[[a]], S3Perm[\[Mu]], S3[[\[Mu]]], VierPerm[A], Vier[[A]], \
+BC4[[n,a,\[Mu],A,II,JJ]] , BC4Perm[n,a,\[Mu],A][[II,JJ]], \
+QuaternionTestIJK[Quat], QuaternionTestKJI[Quat], Digit[Num,Pow], \
+ell[Rep][tt,a][II,JJ], kappa[Rep][ti,a][II,JJ], \
+IellABColor[Rep][[a]], PrintIell[Rep][[a]], IellABCode[Rep][[a]], \
+AntisymmetryCheck[Object1], BC4Color[n,a,\[Mu],A][L], \
+BC4ColorPerm[n,a,\[Mu],A][L],BC4Boson[n,a,\[Mu],A][L],BC4BosonPerm[n,\
+a,\[Mu],A][L], \
+HList,S3List,VierList,PrintBC4Perm[n,a,\[Mu],A],PrintBC4BosonPerm[n,a,\
+\[Mu],A],PrintBC4FermionPerm[n,a,\[Mu],A],PrintBC4ColorPerm[n,a,\[Mu],\
+A],L[Q],L[Qtilde],L[RepCode]
+
+****************************************************************************************
+\
+
+****************************************************************************************
+
+GraphingTools:
+IndexRange[GraphingTools][list]
+
+ AdinkraGreen, AdinkraViolet, AdinkraOrange, AdinkraRed, \
+padLmatrix[L], adjacencyToEdge[mat,col], buildrules[list], Valise, \
+GraphAdinkra[L], GraphAdinkra[L,BuildRules[list], \
+ExportAdinkra[L,BuildRules[list],filename]
+
+****************************************************************************************
+\
+
+****************************************************************************************"
 
 In the above list, the functions are organized in terms of the notebooks with which they are created.
 
