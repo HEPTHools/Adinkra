@@ -1,11 +1,9 @@
-## Adinkra Repository
-
 <img src = "https://github.com/HEPTHools/Adinkra/blob/master/Images/CMExtended.jpg">
 
 ![https://github.com/HEPTHools/Adinkra/blob/master/Images/CMExtended.jpg](https://github.com/HEPTHools/Adinkra/blob/master/Images/CMExtended.jpg)
 
 
-### Files Associated with the Adinkra repository
+# Files Associated with the Adinkra repository
 
 [Adinkra.m](https://raw.githubusercontent.com/kstiffle/hello-world/master/Adinkra.m): mathematica package with tools to research adinkras
 
@@ -16,9 +14,12 @@
 The tutorial [AdinkraTutorial.nb](https://raw.githubusercontent.com/kstiffle/hello-world/master/AdinkraTutorial.nb) shows in depth how to use many of the tools of the Adinkra.m package listed below on this page. 
 
 
-**Download Instructions:** Right (command) click on [Adinkra.m](https://raw.githubusercontent.com/kstiffle/hello-world/master/Adinkra.m) and  [AdinkraTutorial.nb](https://raw.githubusercontent.com/kstiffle/hello-world/master/AdinkraTutorial.nb) to save to you local hard drive. You may have to delete a .txt extension from AdinkraTutorial.nb.after download.
+## Download Instructions 
 
-**Installation Instructions** After downloading, install the Adinkra.m package on your local machine with the File-->Install menu in Mathematica
+Right (command) click on [Adinkra.m](https://raw.githubusercontent.com/kstiffle/hello-world/master/Adinkra.m) and  [AdinkraTutorial.nb](https://raw.githubusercontent.com/kstiffle/hello-world/master/AdinkraTutorial.nb) to save to you local hard drive. You may have to delete a .txt extension from AdinkraTutorial.nb.after download.
+
+## Installation Instructions
+After downloading, install the Adinkra.m package on your local machine with the File-->Install menu in Mathematica
 
 ![FileInstall.jpg](https://github.com/HEPTHools/Adinkra/blob/master/Images/FileInstall.jpg)
 
@@ -36,7 +37,7 @@ Navigate to where you downloaded "Adinkra.m" on you local machine, select it and
 
 ![BuildDate.jpg](https://github.com/HEPTHools/Adinkra/blob/master/Images/BuildDate.jpg)
 
-**About the Adinkra.m package**
+# About the Adinkra.m package
 
 The Adinkra.m package includes tools to
 
