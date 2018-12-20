@@ -1,6 +1,6 @@
 var conv = new showdown.Converter({parseImgDimensions: true});
 
-![CMExtended.jpg](/Images/CMExtended.jpg)                                    
+![CMExtended.jpg](/Images/CMExtended.jpg)                                                                                                                
 
 # Files Associated with the Adinkra repository
 
