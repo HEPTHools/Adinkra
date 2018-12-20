@@ -5,7 +5,7 @@
 ![https://github.com/HEPTHools/Adinkra/blob/master/Images/CMExtended.jpg](https://github.com/HEPTHools/Adinkra/blob/master/Images/CMExtended.jpg)
 
 
-# Files Associated with the Adinkra repository
+### Files Associated with the Adinkra repository
 
 [Adinkra.m](https://raw.githubusercontent.com/kstiffle/hello-world/master/Adinkra.m): mathematica package with tools to research adinkras
 
