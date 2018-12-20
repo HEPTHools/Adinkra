@@ -1,5 +1,3 @@
-# In association with the Brown Theoretical Physics Center (BTPC)
-
 ![CMExtended.jpg](/Images/CMExtended.jpg)                                                                                                                
 
 # Files Associated with the Adinkra repository
