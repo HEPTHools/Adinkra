@@ -1,7 +1,6 @@
-<img src = "https://github.com/HEPTHools/Adinkra/blob/master/Images/CMExtended.jpg">
-
 ![https://github.com/HEPTHools/Adinkra/blob/master/Images/CMExtended.jpg](https://github.com/HEPTHools/Adinkra/blob/master/Images/CMExtended.jpg)
 
+![CMExtended](/Images/CMExtended.jpg)
 
 # Files Associated with the Adinkra repository
 
