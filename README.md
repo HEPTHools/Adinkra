@@ -22,15 +22,15 @@ Click on [Adinkra.m](https://raw.githubusercontent.com/kstiffle/hello-world/mast
 ## Installation Instructions
 After downloading, install the Adinkra.m package on your local machine with the File-->Install menu in Mathematica
 
-![UpdateFileInstall.png](https://github.com/HEPTHools/Adinkra/blob/master/Images/UpdateFileInstall.png)
+![FileInstall.jpg](/Images/FileInstall.jpg)
 
 In the "Source" dropdown menu, select "From File..."
 
-![UpdateFromFile.png](https://github.com/HEPTHools/Adinkra/blob/master/Images/UpdateFromFile.png)
+![UpdateFromFile.png](/Images/UpdateFromFile.png)
 
 Navigate to where you downloaded "Adinkra.m" on you local machine, select it and click "ok". Import the package into a notebook as follows:
 
-![UpdateImportAdinkra.png](https://github.com/HEPTHools/Adinkra/blob/master/Images/UpdateImportAdinkra.png)
+![UpdateImportAdinkra.png](/Images/UpdateImportAdinkra.png)
 
  **If updated from an old version of Adinkra.m, you may have to delete the old package first. Run [DeleteAdinkra.nb](https://raw.githubusercontent.com/HEPTHools/Adinkra/master/DeleteAdinkra.nb) to delete an existing Adinkra package** 
  
