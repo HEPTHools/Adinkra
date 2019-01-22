@@ -13,20 +13,24 @@ The tutorial [AdinkraTutorial.nb](https://raw.githubusercontent.com/kstiffle/hel
 
 ## Download Instructions 
 
-Right (command) click on [Adinkra.m](https://raw.githubusercontent.com/kstiffle/hello-world/master/Adinkra.m) and  [AdinkraTutorial.nb](https://raw.githubusercontent.com/kstiffle/hello-world/master/AdinkraTutorial.nb) to save to you local hard drive. You may have to delete a .txt extension from AdinkraTutorial.nb.after download.
+Right (command) click on [Adinkra.m](https://raw.githubusercontent.com/kstiffle/hello-world/master/Adinkra.m) and the examples in the Examples directory to save to your local hard drive. You may have to delete a .txt extension from AdinkraTutorial.nb.after download.
+
+## Alternative Download Instructions 
+
+Click on [Adinkra.m](https://raw.githubusercontent.com/kstiffle/hello-world/master/Adinkra.m) and the examples in the Examples directory, and copy the raw text into a Mathematica file to save to your local hard drive.
 
 ## Installation Instructions
 After downloading, install the Adinkra.m package on your local machine with the File-->Install menu in Mathematica
 
-![FileInstall.jpg](/Images/FileInstall.jpg)
+![UpdateFileInstall.png](https://github.com/HEPTHools/Adinkra/blob/master/Images/UpdateFileInstall.png)
 
 In the "Source" dropdown menu, select "From File..."
 
-![FromFile.jpg](/Images/FromFile.jpg)
+![UpdateFromFile.png](https://github.com/HEPTHools/Adinkra/blob/master/Images/UpdateFromFile.png)
 
 Navigate to where you downloaded "Adinkra.m" on you local machine, select it and click "ok". Import the package into a notebook as follows:
 
-![ImportAdinkra.jpg](/Images/ImportAdinkra.jpg)
+![UpdateImportAdinkra.png](https://github.com/HEPTHools/Adinkra/blob/master/Images/UpdateImportAdinkra.png)
 
  **If updated from an old version of Adinkra.m, you may have to delete the old package first. Run [DeleteAdinkra.nb](https://raw.githubusercontent.com/HEPTHools/Adinkra/master/DeleteAdinkra.nb) to delete an existing Adinkra package** 
  
