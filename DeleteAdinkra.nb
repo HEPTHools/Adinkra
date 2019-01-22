@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     11871,        209]
-NotebookOptionsPosition[     11078,        186]
-NotebookOutlinePosition[     11602,        206]
-CellTagsIndexPosition[     11559,        203]
+NotebookDataLength[     12405,        227]
+NotebookOptionsPosition[     11588,        200]
+NotebookOutlinePosition[     12105,        220]
+CellTagsIndexPosition[     12062,        217]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -148,11 +148,14 @@ Cell[BoxData[
  RowBox[{
   RowBox[{"MachineType", " ", "=", " ", "PC"}], ";", "   ", 
   RowBox[{"(*", " ", 
-   RowBox[{"PC", " ", "or", " ", "MAC"}], " ", "*)"}]}]], "Input",
+   RowBox[{"PC", ",", " ", "MAC", ",", " ", 
+    RowBox[{"or", " ", "LINUX"}]}], " ", "*)"}]}]], "Input",
  CellChangeTimes->{{3.74999354634788*^9, 3.74999357682591*^9}, 
    3.7499942583048396`*^9, 3.7501018175605097`*^9, {3.7539109403302608`*^9, 
-   3.7539109500177164`*^9}},
- CellLabel->"In[1]:=",ExpressionUUID->"2ec4507e-a0d4-4d36-9e8e-c85f1d06551f"],
+   3.7539109500177164`*^9}, {3.757004868897256*^9, 3.7570048701342793`*^9}, {
+   3.7570054137870207`*^9, 3.7570054618480864`*^9}, {3.757005499892633*^9, 
+   3.757005523393096*^9}},ExpressionUUID->"2ec4507e-a0d4-4d36-9e8e-\
+c85f1d06551f"],
 
 Cell[BoxData[{
  RowBox[{
@@ -169,29 +172,40 @@ Cell[BoxData[{
    RowBox[{"StringJoin", "[", 
     RowBox[{
      RowBox[{"ToString", "[", "$UserBaseDirectory", "]"}], ",", 
-     "\"\</Applications/Adinkra.wl\>\""}], "]"}]}], ";"}]}], "Input",
+     "\"\</Applications/Adinkra.wl\>\""}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"DeleteString", "[", "LINUX", "]"}], " ", "=", " ", 
+   RowBox[{"StringJoin", "[", 
+    RowBox[{
+     RowBox[{"ToString", "[", "$UserBaseDirectory", "]"}], ",", 
+     "\"\</Applications/Adinkra.m\>\""}], "]"}]}], ";"}]}], "Input",
  CellChangeTimes->{{3.749993395179047*^9, 3.749993416361521*^9}, {
   3.749993582181048*^9, 3.7499936362425537`*^9}, {3.749993670428146*^9, 
   3.7499936826875067`*^9}, {3.749994146694394*^9, 3.749994147195778*^9}, {
-  3.7539109527776265`*^9, 3.753910955892866*^9}},
- CellLabel->"In[2]:=",ExpressionUUID->"b7b4a67c-0585-4927-a55b-9a1a22379596"],
+  3.7539109527776265`*^9, 3.753910955892866*^9}, {3.7570049057486267`*^9, 
+  3.757004906514207*^9}, {3.757005467420732*^9, 
+  3.757005490501334*^9}},ExpressionUUID->"b7b4a67c-0585-4927-a55b-\
+9a1a22379596"],
 
 Cell[BoxData[
  RowBox[{"DeleteFile", "[", 
   RowBox[{"DeleteString", "[", "MachineType", "]"}], "]"}]], "Input",
  CellChangeTimes->{{3.74999306982132*^9, 3.749993073210136*^9}, {
-  3.749993646899967*^9, 3.749993652009759*^9}},
- CellLabel->"In[4]:=",ExpressionUUID->"0087706b-481b-41c2-8d89-f34ab46a8117"]
+  3.749993646899967*^9, 
+  3.749993652009759*^9}},ExpressionUUID->"0087706b-481b-41c2-8d89-\
+f34ab46a8117"]
 }, Open  ]]
 },
 WindowSize->{958, 988},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
 PrintingCopies->1,
 PrintingPageRange->{Automatic, Automatic},
 PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
 ShowSelection->True,
 CellContext->Notebook,
-FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+FrontEndVersion->"11.1 for Linux x86 (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -206,10 +220,14 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[579, 22, 8847, 122, 156, "Title",ExpressionUUID->"dfab12f3-523a-4891-ab6d-6353bcfa0aa5"],
-Cell[9429, 146, 421, 8, 28, "Input",ExpressionUUID->"2ec4507e-a0d4-4d36-9e8e-c85f1d06551f"],
-Cell[9853, 156, 902, 20, 48, "Input",ExpressionUUID->"b7b4a67c-0585-4927-a55b-9a1a22379596"],
-Cell[10758, 178, 304, 5, 28, "Input",ExpressionUUID->"0087706b-481b-41c2-8d89-f34ab46a8117"]
+Cell[579, 22, 8847, 122, 152, "Title", "ExpressionUUID" -> \
+"dfab12f3-523a-4891-ab6d-6353bcfa0aa5"],
+Cell[9429, 146, 591, 11, 35, "Input", "ExpressionUUID" -> \
+"2ec4507e-a0d4-4d36-9e8e-c85f1d06551f"],
+Cell[10023, 159, 1260, 30, 83, "Input", "ExpressionUUID" -> \
+"b7b4a67c-0585-4927-a55b-9a1a22379596"],
+Cell[11286, 191, 286, 6, 33, "Input", "ExpressionUUID" -> \
+"0087706b-481b-41c2-8d89-f34ab46a8117"]
 }, Open  ]]
 }
 ]
