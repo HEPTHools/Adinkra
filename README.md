@@ -8,16 +8,16 @@
 
 
 
-The tutorial [AdinkraTutorial.nb](https://raw.githubusercontent.com/kstiffle/hello-world/master/AdinkraTutorial.nb) shows in depth how to use many of the tools of the Adinkra.m package listed below on this page. 
+The tutorial [AdinkraTutorial.nb](https://raw.githubusercontent.com/HEPTHools/Adinkra/master/AdinkraTutorial.nb) shows in depth how to use many of the tools of the Adinkra.m package listed below on this page. 
 
 
 ## Download Instructions 
 
-Right (command) click on [Adinkra.m](https://raw.githubusercontent.com/kstiffle/hello-world/master/Adinkra.m) and the examples in the Examples directory to save to your local hard drive. You may have to delete a .txt extension from AdinkraTutorial.nb.after download.
+Right (command) click on [Adinkra.m](https://raw.githubusercontent.com/HEPTHools/Adinkra/master/Adinkra.m) and the examples in the Examples directory to save to your local hard drive. You may have to delete a .txt extension from AdinkraTutorial.nb.after download.
 
 ## Alternative Download Instructions 
 
-Click on [Adinkra.m](https://raw.githubusercontent.com/kstiffle/hello-world/master/Adinkra.m) and the examples in the Examples directory, and copy the raw text into a Mathematica file to save to your local hard drive.
+Click on [Adinkra.m](https://raw.githubusercontent.com/HEPTHools/Adinkra/master/Adinkra.m) and the examples in the Examples directory, and copy the raw text into a Mathematica file to save to your local hard drive.
 
 ## Installation Instructions
 After downloading, install the Adinkra.m package on your local machine with the File-->Install menu in Mathematica
