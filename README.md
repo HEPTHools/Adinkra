@@ -15,7 +15,7 @@
 
 
 
-The tutorial [AdinkraTutorial.nb](https://raw.githubusercontent.com/HEPTHools/Adinkra/master/AdinkraTutorial.nb) shows in depth how to use many of the tools of the Adinkra.m package listed below on this page. 
+The tutorials show in depth how to use many of the tools of the Adinkra.m package listed below on this page. 
 
 
 ## Download Instructions 
