@@ -47,7 +47,7 @@ The Adinkra.m package includes tools to
 3. Graph L- and R- adinkra matrices as an adinkra for GR(4,4) matrices
 4. Allows the user to encode their own arbitrary GR(d,N) L- and R- adinkra matrices and check that the GR(d,N) algebra is satisfied
 4. Calculate chi_0 and holoraumy of adinkra matrices for arbitrary GR(d,N)
-5. Print out L, R, holoraumy matrices and closure relationship in a GL(d/4) \times GL(4) tensor product basis in symbolic form ready to be LaTexed by Mathematica's TeXForm command
+5. Print out L, R, holoraumy matrices and closure relationship in a GL(d/4) x GL(4) tensor product basis in symbolic form ready to be LaTexed by Mathematica's TeXForm command
 
 ```
 
