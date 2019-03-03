@@ -10,27 +10,15 @@ Click on the download link above. Save to your local hard drive by either
 
 * Copying the raw text stored at the above link into a text editor and saving in a file on your local hard drive with only a .m extension.
 
-* [Adinkra.m](https://raw.githubusercontent.com/HEPTHools/Adinkra/master/Adinkra.m): mathematica package with tools to research adinkras
 
-* [AdinkraTutorial.nb](https://raw.githubusercontent.com/HEPTHools/Adinkra/master/AdinkraTutorial.nb): full tutorial notebook file with examples on how to use the various functions of the Adinkra.m package.
+## Tutorials 
 
-* [4DTools.nb](https://raw.githubusercontent.com/HEPTHools/Adinkra/master/Examples/4DTools.nb): tutorial notebook file with just the examples of 4D tools of the full tutorial AdinkraTutorial.nb.
-
-* [N!=4.nb](https://raw.githubusercontent.com/HEPTHools/Adinkra/master/Examples/N!=4.nb): tutorial notebook file with just the examples of N != 4 adinkras of the full tutorial AdinkraTutorial.nb.
-
-* [N=4.nb](https://raw.githubusercontent.com/HEPTHools/Adinkra/master/Examples/N=4.nb): tutorial notebook file with just the examples of N = 4 adinkras of the full tutorial AdinkraTutorial.nb.
-
-
-
-
-The tutorials show in depth how to use many of the tools of the Adinkra.m package listed below on this page. 
-
-
-
-
+Tutorials showing in depth how to use many of the tools of the Adinkra.m package can be found [here](https://hepthools.github.io/Adinkra/Examples/)
 
 
 ## Installation Instructions
+**When updating Adinkra.m from a previous version, you may have to delete the old installation first. Download and run [DeleteAdinkra.nb](https://raw.githubusercontent.com/HEPTHools/Adinkra/master/DeleteAdinkra.nb) before updating.**
+
 After downloading, install the Adinkra.m package on your local machine with the File-->Install menu in Mathematica
 
 ![FileInstall.jpg](/Images/FileInstall.jpg)
@@ -43,7 +31,7 @@ Navigate to where you downloaded "Adinkra.m" on you local machine, select it and
 
 ![UpdateImportAdinkra.png](/Images/UpdateImportAdinkra.png)
 
- **If updated from an old version of Adinkra.m, you may have to delete the old package first. Run [DeleteAdinkra.nb](https://raw.githubusercontent.com/HEPTHools/Adinkra/master/DeleteAdinkra.nb) to delete an existing Adinkra package** 
+ 
  
  The date of the latest build, in yymmdd format, can be called by running, for example
 
