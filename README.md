@@ -17,7 +17,7 @@ Click [here](https://hepthools.github.io/Adinkra/Examples/) for various tutorial
 
 
 ## Installation Instructions
-**When updating Adinkra.m from a previous version, you may have to delete the old installation first. Download and run [DeleteAdinkra.nb](https://raw.githubusercontent.com/HEPTHools/Adinkra/master/DeleteAdinkra.nb) before updating.**
+**If updating Adinkra.m from a previous version, the old installation may first need to be deleted. Download and run [DeleteAdinkra.nb](https://raw.githubusercontent.com/HEPTHools/Adinkra/master/DeleteAdinkra.nb) before updating.**
 
 After downloading, install the Adinkra.m package on your local machine with the File-->Install menu in Mathematica
 
