@@ -13,7 +13,7 @@ Adinkra.m may be saved anywhere on your local machine. It must then be installed
 
 ## Tutorials 
 
-Tutorials showing in depth how to use many of the tools of the Adinkra.m package can be found [here](https://hepthools.github.io/Adinkra/Examples/)
+Click [here](https://hepthools.github.io/Adinkra/Examples/) for various tutorials on how to use the functions of the adinkra.m package.
 
 
 ## Installation Instructions
