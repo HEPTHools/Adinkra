@@ -1,8 +1,6 @@
 ![CMExtended.jpg](/Images/CMExtended.jpg)                                                                                                                
 
-# [Download Adinkra.m](https://raw.githubusercontent.com/HEPTHools/Adinkra/master/Adinkra.m)
-
-## Download Instructions 
+# [Download Adinkra.m](https://raw.githubusercontent.com/HEPTHools/Adinkra/master/Adinkra.m) 
 
 Click on the download link above. Save to your local hard drive by either
 
