@@ -4,17 +4,11 @@
 
 ## Download Instructions 
 
-Click on the download link above. Save to your local hard drive and follow the install instructions below.
+Click on the download link above. Save to your local hard drive by either
 
-Right (command) click on [Adinkra.m](https://raw.githubusercontent.com/HEPTHools/Adinkra/master/Adinkra.m) and the examples in the Examples directory to save to your local hard drive. You may have to delete a .txt extension from AdinkraTutorial.nb.after download.
+* Right (command) clicking the above download link and saving to your local hard drive.
 
-## Alternative Download Instructions 
-
-Click on [Adinkra.m](https://raw.githubusercontent.com/HEPTHools/Adinkra/master/Adinkra.m) and the examples in the Examples directory, and copy the raw text into a Mathematica file to save to your local hard drive.
-
-# Files Associated with the Adinkra repository
-
-
+* Copying the raw text stored at the above link into a text editor and saving in a file on your local hard drive with only a .m extension.
 
 * [Adinkra.m](https://raw.githubusercontent.com/HEPTHools/Adinkra/master/Adinkra.m): mathematica package with tools to research adinkras
 
