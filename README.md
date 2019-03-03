@@ -1,6 +1,10 @@
 ![CMExtended.jpg](/Images/CMExtended.jpg)                                                                                                                
 
+# [Download Adinkra.m](https://raw.githubusercontent.com/HEPTHools/Adinkra/master/Adinkra.m)
+
 # Files Associated with the Adinkra repository
+
+
 
 * [Adinkra.m](https://raw.githubusercontent.com/HEPTHools/Adinkra/master/Adinkra.m): mathematica package with tools to research adinkras
 
