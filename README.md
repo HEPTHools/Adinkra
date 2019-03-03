@@ -2,11 +2,13 @@
 
 # [Download Adinkra.m](https://raw.githubusercontent.com/HEPTHools/Adinkra/master/Adinkra.m) 
 
-Click on the download link above. Save to your local hard drive by either
+Click on the download link above. Save to your local machine by either
 
 * Right (command) clicking the above download link and saving to your local hard drive.
 
-* Copying the raw text stored at the above link into a text editor and saving in a file on your local hard drive with only a .m extension.
+* Copying the raw text stored at the above link into a text editor and saving with only a .m extension.
+
+Adinkra.m may be saved anywhere on your local machine. It must then be installed via Mathematica as described in the installation instruction below.
 
 
 ## Tutorials 
