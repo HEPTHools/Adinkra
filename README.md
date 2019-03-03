@@ -35,11 +35,14 @@ Navigate to where you downloaded "Adinkra.m" on you local machine, select it and
 
 ![BuildDate.jpg](/Images/BuildDate.jpg)
 
+
+# About the Adinkra.m package
+
 ## Tutorials 
 
 Click [here](https://hepthools.github.io/Adinkra/Examples/) for various tutorials on how to use the functions of the adinkra.m package. 
 
-# About the Adinkra.m package
+## Summary
 
 The Adinkra.m package includes tools to
 
