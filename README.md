@@ -10,9 +10,9 @@ Click on the download link above. Save to your local machine by either
 
 Adinkra.m may be saved anywhere on your local machine and must then be installed as descried in the installation instruction below.
 
+## Tutorials 
 
-
-
+Click [here](https://hepthools.github.io/Adinkra/Examples/) for various tutorials on how to use the functions of the Adinkra.m package summarized below. The tutorials require installation of Adinkra.m as described below.
 
 ## Installation Instructions
 **If updating Adinkra.m from a previous version, the old installation may first need to be deleted. Download and run [DeleteAdinkra.nb](https://raw.githubusercontent.com/HEPTHools/Adinkra/master/DeleteAdinkra.nb) before updating.**
@@ -38,9 +38,7 @@ Navigate to where you downloaded "Adinkra.m" on you local machine, select it and
 
 # About the Adinkra.m package
 
-## Tutorials 
 
-Click [here](https://hepthools.github.io/Adinkra/Examples/) for various tutorials on how to use the functions of the adinkra.m package. 
 
 ## Summary
 
