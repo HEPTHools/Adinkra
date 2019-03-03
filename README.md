@@ -11,9 +11,7 @@ Click on the download link above. Save to your local machine by either
 Adinkra.m may be saved anywhere on your local machine and must then be installed as descried in the installation instruction below.
 
 
-## Tutorials 
 
-Click [here](https://hepthools.github.io/Adinkra/Examples/) for various tutorials on how to use the functions of the adinkra.m package. 
 
 
 ## Installation Instructions
@@ -36,6 +34,10 @@ Navigate to where you downloaded "Adinkra.m" on you local machine, select it and
  The date of the latest build, in yymmdd format, can be called by running, for example
 
 ![BuildDate.jpg](/Images/BuildDate.jpg)
+
+## Tutorials 
+
+Click [here](https://hepthools.github.io/Adinkra/Examples/) for various tutorials on how to use the functions of the adinkra.m package. 
 
 # About the Adinkra.m package
 
