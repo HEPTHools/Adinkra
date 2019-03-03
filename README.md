@@ -27,7 +27,7 @@ In the "Source" dropdown menu, select "From File..."
 
 Navigate to where you downloaded "Adinkra.m" on you local machine, select it and click "ok". Import the package into a notebook as follows:
 
-![HighResImportAdinkra.png](/Images/HighResImportAdinkra.png)
+![HighResImportAdinkra.jpg](/Images/HighResImportAdinkra.jpg)
 
  
  
