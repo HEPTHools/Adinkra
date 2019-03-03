@@ -8,7 +8,7 @@ Click on the download link above. Save to your local machine by either
 
 * Copying the raw text stored at the above link into a text editor and saving with only a .m extension.
 
-Adinkra.m may be saved anywhere on your local machine. It must then be installed via Mathematica as described in the installation instruction below.
+Adinkra.m may be saved anywhere on your local machine and must then be installed as descried in the installation instruction below.
 
 
 ## Tutorials 
