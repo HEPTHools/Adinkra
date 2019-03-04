@@ -1511,7 +1511,7 @@ BosonGadget[Rep1_, Rep2_] := Simplify[
       (-(1/VScaleFactor^2))*Sum[Tr[V[Rep1][[Ii,Ji]] . V[Rep2][[Ii,Ji]]], 
        {Ii, 1, NColors[Rep1]}, {Ji, 1, NColors[Rep1]}]]
  
-BuildDate[Adinkra] = 181216
+BuildDate[Adinkra] = 190304
  
 buildrules[list_] := Module[{rules = {}, layerlengths := 
        Map[Length, list, {1}]}, For[i = 1, i <= Length[list], i++, 
@@ -1520,23 +1520,23 @@ buildrules[list_] := Module[{rules = {}, layerlengths :=
              layerlengths[[i]] + 1 - layerlengths[[i]]/2][[j]], -i}]]]; 
       Return[rules]]
  
-CheckGALRCoeffs[Rep_] := If[GALRCString[Rep] != "", 
+CheckGALRCoeffs[Rep_] := If[CMessage[Rep][3, 1] != "", 
      Simplify[Table[GALR[Rep][[Ii,Ji]], {Ii, 1, NColors[Rep]}, 
         {Ji, Ii, NColors[Rep]}] == Table[Sum[Wfcn[slndimb[Rep]][[ai]]*
           GALRCoeffs[Rep][Ii, Ji][[ai,mu,nu]]*Basis[dbosons[Rep]][ai, mu, 
            nu], {ai, 1, Num\[Omega]b[Rep]}, {mu, 1, 4}, {nu, 1, 4}], 
-        {Ii, 1, NColors[Rep]}, {Ji, Ii, NColors[Rep]}]], GALRCMessage[Rep]]
+        {Ii, 1, NColors[Rep]}, {Ji, Ii, NColors[Rep]}]], CMessage[Rep][3, 2]]
  
 slndimb[Rep_] := dbosons[Rep]/4
  
 Num\[Omega]b[Rep_] := slndimb[Rep]^2
  
-CheckGARLCoeffs[Rep_] := If[GARLCString[Rep] != "", 
+CheckGARLCoeffs[Rep_] := If[CMessage[Rep][4, 1] != "", 
      Simplify[Table[GARL[Rep][[Ii,Ji]], {Ii, 1, NColors[Rep]}, 
         {Ji, Ii, NColors[Rep]}] == Table[Sum[Wfcn[slndimf[Rep]][[ai]]*
           GARLCoeffs[Rep][Ii, Ji][[ai,mu,nu]]*Basis[dfermions[Rep]][ai, mu, 
            nu], {ai, 1, Num\[Omega]f[Rep]}, {mu, 1, 4}, {nu, 1, 4}], 
-        {Ii, 1, NColors[Rep]}, {Ji, Ii, NColors[Rep]}]], GARLCMessage[Rep]]
+        {Ii, 1, NColors[Rep]}, {Ji, Ii, NColors[Rep]}]], CMessage[Rep][4, 2]]
  
 slndimf[Rep_] := dfermions[Rep]/4
  
@@ -2121,42 +2121,42 @@ CheckID3 = {{{{{0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}},
        {{0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}}, 
        {{0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}}}}}
  
-CheckLCoeffs[Rep_] := If[LCString[Rep] != "", 
+CheckLCoeffs[Rep_] := If[CMessage[Rep][1, 1] != "", 
      Simplify[L[Rep] == Table[Sum[Wfcn[slndimb[Rep]][[ai]]*
           LCoeffs[Rep][Ii][[ai,mu,nu]]*Basis[dbosons[Rep]][ai, mu, nu], 
          {ai, 1, Num\[Omega]b[Rep]}, {mu, 1, 4}, {nu, 1, 4}], 
-        {Ii, 1, NColors[Rep]}]], LCMessage[Rep]]
+        {Ii, 1, NColors[Rep]}]], CMessage[Rep][1, 2]]
  
-CheckRCoeffs[Rep_] := If[RCString[Rep] != "", 
+CheckRCoeffs[Rep_] := If[CMessage[Rep][2, 1] != "", 
      Simplify[R[Rep] == Table[Sum[Wfcn[slndimf[Rep]][[ai]]*
           RCoeffs[Rep][Ii][[ai,mu,nu]]*Basis[dbosons[Rep]][ai, mu, nu], 
          {ai, 1, Num\[Omega]f[Rep]}, {mu, 1, 4}, {nu, 1, 4}], 
-        {Ii, 1, NColors[Rep]}]], RCMessage[Rep]]
+        {Ii, 1, NColors[Rep]}]], CMessage[Rep][2, 2]]
  
-CheckVCoeffs[Rep_] := If[VCString[Rep] != "", 
+CheckVCoeffs[Rep_] := If[CMessage[Rep][5, 1] != "", 
      Simplify[Table[V[Rep][[Ii,Ji]], {Ii, 1, NColors[Rep] - 1}, 
         {Ji, Ii + 1, NColors[Rep]}] == 
        Table[Sum[Wfcn[slndimb[Rep]][[ai]]*VCoeffs[Rep][Ii, Ji][[ai,mu,nu]]*
           Basis[dbosons[Rep]][ai, mu, nu], {ai, 1, Num\[Omega]b[Rep]}, 
          {mu, 1, 4}, {nu, 1, 4}], {Ii, 1, NColors[Rep] - 1}, 
-        {Ji, Ii + 1, NColors[Rep]}]], VCMessage[Rep]]
+        {Ji, Ii + 1, NColors[Rep]}]], CMessage[Rep][5, 2]]
  
-CheckVPMCoeffs[pm_][Rep_] := If[VPMCString[Rep] != "", 
+CheckVPMCoeffs[pm_][Rep_] := If[CMessage[Rep][7, 1] != "", 
      Simplify[Table[VPM[pm][Rep][[Ii,Ji]], {Ii, 1, 2}, {Ji, Ii + 1, 3}] == 
        Table[Sum[Wfcn[slndimb[Rep]][[ai]]*VPMCoeffs[pm][Rep][Ii, Ji][[ai,mu,
            nu]]*Basis[dbosons[Rep]][ai, mu, nu], {ai, 1, Num\[Omega]b[Rep]}, 
          {mu, 1, 4}, {nu, 1, 4}], {Ii, 1, 2}, {Ji, Ii + 1, 3}]], 
-     VPMCMessage[Rep]]
+     CMessage[Rep][7, 2]]
  
-CheckVtildeCoeffs[Rep_] := If[VtildeCString[Rep] != "", 
+CheckVtildeCoeffs[Rep_] := If[CMessage[Rep][6, 1] != "", 
      Simplify[Table[Vtilde[Rep][[Ii,Ji]], {Ii, 1, NColors[Rep] - 1}, 
         {Ji, Ii + 1, NColors[Rep]}] == 
        Table[Sum[Wfcn[slndimf[Rep]][[ai]]*VtildeCoeffs[Rep][Ii, Ji][[ai,mu,
            nu]]*Basis[dbosons[Rep]][ai, mu, nu], {ai, 1, Num\[Omega]f[Rep]}, 
          {mu, 1, 4}, {nu, 1, 4}], {Ii, 1, NColors[Rep] - 1}, 
-        {Ji, Ii + 1, NColors[Rep]}]], VtildeCMessage[Rep]]
+        {Ji, Ii + 1, NColors[Rep]}]], CMessage[Rep][6, 2]]
  
-CheckVtildePMCoeffs[pm_][Rep_] := If[VtildePMCString[Rep] != "", 
+CheckVtildePMCoeffs[pm_][Rep_] := If[CMessage[Rep][8, 1] != "", 
      Simplify[Table[VtildePM[pm][Rep][[Ii,Ji]], {Ii, 1, 2}, 
         {Ji, Ii + 1, 3}] == Table[Sum[Wfcn[slndimf[Rep]][[ai]]*
           VtildePMCoeffs[pm][Rep][Ii, Ji][[ai,mu,nu]]*Basis[dbosons[Rep]][ai, 
@@ -2542,49 +2542,49 @@ ConstructBasis[Matrix_] := Sum[Wfcn[Length[Matrix]/4][[ai]]*
           2]] \[CircleTimes] \[Rho][Mod[mu, 4], Mod[nu, 4]], 
      {ai, 1, (Length[Matrix]/4)^2}, {mu, 1, 4}, {nu, 1, 4}]
  
-ConstructGALRBasis[4, Rep_][Ii_, Ji_] := If[GALRCString[Rep] != "", 
+ConstructGALRBasis[4, Rep_][Ii_, Ji_] := If[CMessage[Rep][3, 1] != "", 
      Sum[Wfcn[slndimb[Rep]][[ai]]*GALRCoeffs[Rep][Ii, Ji][[ai,mu,nu]]*
        \[Rho][Mod[mu, 4], Mod[nu, 4]], {ai, 1, Num\[Omega]b[Rep]}, 
-      {mu, 1, 4}, {nu, 1, 4}], GALRCMessage[Rep]]
+      {mu, 1, 4}, {nu, 1, 4}], CMessage[Rep][3, 2]]
  
-ConstructGALRBasis[Rep_][Ii_, Ji_] := If[GALRCString[Rep] != "", 
+ConstructGALRBasis[Rep_][Ii_, Ji_] := If[CMessage[Rep][3, 1] != "", 
      Sum[Wfcn[slndimb[Rep]][[ai]]*GALRCoeffs[Rep][Ii, Ji][[ai,mu,nu]]*
        \[Omega][slndimb[Rep]][Mod[ai, Num\[Omega]b[Rep]]] \[CircleTimes] 
         \[Rho][Mod[mu, 4], Mod[nu, 4]], {ai, 1, Num\[Omega]b[Rep]}, 
-      {mu, 1, 4}, {nu, 1, 4}], GALRCMessage[Rep]]
+      {mu, 1, 4}, {nu, 1, 4}], CMessage[Rep][3, 2]]
  
-ConstructGARLBasis[4, Rep_][Ii_, Ji_] := If[GARLCString[Rep] != "", 
+ConstructGARLBasis[4, Rep_][Ii_, Ji_] := If[CMessage[Rep][4, 1] != "", 
      Sum[Wfcn[slndimf[Rep]][[ai]]*GARLCoeffs[Rep][Ii, Ji][[ai,mu,nu]]*
        \[Rho][Mod[mu, 4], Mod[nu, 4]], {ai, 1, Num\[Omega]f[Rep]}, 
-      {mu, 1, 4}, {nu, 1, 4}], GARLCMessage[Rep]]
+      {mu, 1, 4}, {nu, 1, 4}], CMessage[Rep][4, 2]]
  
-ConstructGARLBasis[Rep_][Ii_, Ji_] := If[GARLCString[Rep] != "", 
+ConstructGARLBasis[Rep_][Ii_, Ji_] := If[CMessage[Rep][4, 1] != "", 
      Sum[Wfcn[slndimf[Rep]][[ai]]*GARLCoeffs[Rep][Ii, Ji][[ai,mu,nu]]*
        \[Omega][slndimf[Rep]][Mod[ai, Num\[Omega]f[Rep]]] \[CircleTimes] 
         \[Rho][Mod[mu, 4], Mod[nu, 4]], {ai, 1, Num\[Omega]f[Rep]}, 
-      {mu, 1, 4}, {nu, 1, 4}], GARLCMessage[Rep]]
+      {mu, 1, 4}, {nu, 1, 4}], CMessage[Rep][4, 2]]
  
-ConstructLBasis[4, Rep_][Ii_] := If[LCString[Rep] != "", 
+ConstructLBasis[4, Rep_][Ii_] := If[CMessage[Rep][1, 1] != "", 
      Sum[Wfcn[slndimb[Rep]][[ai]]*LCoeffs[Rep][Ii][[ai,mu,nu]]*
        \[Rho][Mod[mu, 4], Mod[nu, 4]], {ai, 1, Num\[Omega]b[Rep]}, 
-      {mu, 1, 4}, {nu, 1, 4}], LCMessage[Rep]]
+      {mu, 1, 4}, {nu, 1, 4}], CMessage[Rep][1, 2]]
  
-ConstructLBasis[Rep_][Ii_] := If[LCString[Rep] != "", 
+ConstructLBasis[Rep_][Ii_] := If[CMessage[Rep][1, 1] != "", 
      Sum[Wfcn[slndimb[Rep]][[ai]]*LCoeffs[Rep][Ii][[ai,mu,nu]]*
        \[Omega][slndimb[Rep]][Mod[ai, Num\[Omega]b[Rep]]] \[CircleTimes] 
         \[Rho][Mod[mu, 4], Mod[nu, 4]], {ai, 1, Num\[Omega]b[Rep]}, 
-      {mu, 1, 4}, {nu, 1, 4}], LCMessage[Rep]]
+      {mu, 1, 4}, {nu, 1, 4}], CMessage[Rep][1, 2]]
  
-ConstructRBasis[4, Rep_][Ii_] := If[RCString[Rep] != "", 
+ConstructRBasis[4, Rep_][Ii_] := If[CMessage[Rep][2, 1] != "", 
      Sum[Wfcn[slndimf[Rep]][[ai]]*RCoeffs[Rep][Ii][[ai,mu,nu]]*
        \[Rho][Mod[mu, 4], Mod[nu, 4]], {ai, 1, Num\[Omega]f[Rep]}, 
-      {mu, 1, 4}, {nu, 1, 4}], RCMessage[Rep]]
+      {mu, 1, 4}, {nu, 1, 4}], CMessage[Rep][2, 2]]
  
-ConstructRBasis[Rep_][Ii_] := If[RCString[Rep] != "", 
+ConstructRBasis[Rep_][Ii_] := If[CMessage[Rep][2, 1] != "", 
      Sum[Wfcn[slndimf[Rep]][[ai]]*RCoeffs[Rep][Ii][[ai,mu,nu]]*
        \[Omega][slndimf[Rep]][Mod[ai, Num\[Omega]f[Rep]]] \[CircleTimes] 
         \[Rho][Mod[mu, 4], Mod[nu, 4]], {ai, 1, Num\[Omega]f[Rep]}, 
-      {mu, 1, 4}, {nu, 1, 4}], RCMessage[Rep]]
+      {mu, 1, 4}, {nu, 1, 4}], CMessage[Rep][2, 2]]
  
 ConstructSigmaProduct[Matrix_] := 
     {Hold[Sum[SigmaProductCoeffs[Matrix][mu]*Subscript[\[Sigma], mu], 
@@ -2673,59 +2673,59 @@ Attributes[Subscript] = {NHoldRest}
  
 \[Sigma][3, 3] = {{0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}}
  
-ConstructVBasis[4, Rep_][Ii_, Ji_] := If[VCString[Rep] != "", 
+ConstructVBasis[4, Rep_][Ii_, Ji_] := If[CMessage[Rep][5, 1] != "", 
      Sum[Wfcn[slndimb[Rep]][[ai]]*VCoeffs[Rep][Ii, Ji][[ai,mu,nu]]*
        \[Rho][Mod[mu, 4], Mod[nu, 4]], {ai, 1, Num\[Omega]b[Rep]}, 
-      {mu, 1, 4}, {nu, 1, 4}], VCMessage[Rep]]
+      {mu, 1, 4}, {nu, 1, 4}], CMessage[Rep][5, 2]]
  
-ConstructVBasis[Rep_][Ii_, Ji_] := If[VCString[Rep] != "", 
+ConstructVBasis[Rep_][Ii_, Ji_] := If[CMessage[Rep][5, 1] != "", 
      Sum[Wfcn[slndimb[Rep]][[ai]]*VCoeffs[Rep][Ii, Ji][[ai,mu,nu]]*
        \[Omega][slndimb[Rep]][Mod[ai, Num\[Omega]b[Rep]]] \[CircleTimes] 
         \[Rho][Mod[mu, 4], Mod[nu, 4]], {ai, 1, Num\[Omega]b[Rep]}, 
-      {mu, 1, 4}, {nu, 1, 4}], VCMessage[Rep]]
+      {mu, 1, 4}, {nu, 1, 4}], CMessage[Rep][5, 2]]
  
-ConstructVPMBasis[pm_][4, Rep_][Ii_, Ji_] := If[VPMCString[Rep] != "", 
+ConstructVPMBasis[pm_][4, Rep_][Ii_, Ji_] := If[CMessage[Rep][7, 1] != "", 
      Sum[Wfcn[slndimb[Rep]][[ai]]*VPMCoeffs[pm][Rep][Ii, Ji][[ai,mu,nu]]*
        \[Rho][Mod[mu, 4], Mod[nu, 4]], {ai, 1, Num\[Omega]b[Rep]}, 
-      {mu, 1, 4}, {nu, 1, 4}], VPMCMessage[Rep]]
+      {mu, 1, 4}, {nu, 1, 4}], CMessage[Rep][7, 2]]
  
-ConstructVPMBasis[pm_][Rep_][Ii_, Ji_] := If[VPMCString[Rep] != "", 
+ConstructVPMBasis[pm_][Rep_][Ii_, Ji_] := If[CMessage[Rep][7, 1] != "", 
      Sum[Wfcn[slndimb[Rep]][[ai]]*VPMCoeffs[pm][Rep][Ii, Ji][[ai,mu,nu]]*
        \[Omega][slndimb[Rep]][Mod[ai, Num\[Omega]b[Rep]]] \[CircleTimes] 
         \[Rho][Mod[mu, 4], Mod[nu, 4]], {ai, 1, Num\[Omega]b[Rep]}, 
-      {mu, 1, 4}, {nu, 1, 4}], VPMCMessage[Rep]]
+      {mu, 1, 4}, {nu, 1, 4}], CMessage[Rep][7, 2]]
  
-ConstructVtildeBasis[4, Rep_][Ii_, Ji_] := If[VtildeCString[Rep] != "", 
+ConstructVtildeBasis[4, Rep_][Ii_, Ji_] := If[CMessage[Rep][6, 1] != "", 
      Sum[Wfcn[slndimf[Rep]][[ai]]*VtildeCoeffs[Rep][Ii, Ji][[ai,mu,nu]]*
        \[Rho][Mod[mu, 4], Mod[nu, 4]], {ai, 1, Num\[Omega]f[Rep]}, 
-      {mu, 1, 4}, {nu, 1, 4}], VtildeCMessage[Rep]]
+      {mu, 1, 4}, {nu, 1, 4}], CMessage[Rep][6, 2]]
  
-ConstructVtildeBasis[Rep_][Ii_, Ji_] := If[VtildeCString[Rep] != "", 
+ConstructVtildeBasis[Rep_][Ii_, Ji_] := If[CMessage[Rep][6, 1] != "", 
      Sum[Wfcn[slndimf[Rep]][[ai]]*VtildeCoeffs[Rep][Ii, Ji][[ai,mu,nu]]*
        \[Omega][slndimf[Rep]][Mod[ai, Num\[Omega]f[Rep]]] \[CircleTimes] 
         \[Rho][Mod[mu, 4], Mod[nu, 4]], {ai, 1, Num\[Omega]f[Rep]}, 
-      {mu, 1, 4}, {nu, 1, 4}], VtildeCMessage[Rep]]
+      {mu, 1, 4}, {nu, 1, 4}], CMessage[Rep][6, 2]]
  
 ConstructVtildePMBasis[pm_][4, Rep_][Ii_, Ji_] := 
-    If[VtildePMCString[Rep] != "", Sum[Wfcn[slndimf[Rep]][[ai]]*
+    If[CMessage[Rep][8, 1] != "", Sum[Wfcn[slndimf[Rep]][[ai]]*
        VtildePMCoeffs[pm][Rep][Ii, Ji][[ai,mu,nu]]*\[Rho][Mod[mu, 4], 
         Mod[nu, 4]], {ai, 1, Num\[Omega]f[Rep]}, {mu, 1, 4}, {nu, 1, 4}], 
-     VtildePMCMessage[Rep]]
+     CMessage[Rep][8, 2]]
  
-ConstructVtildePMBasis[pm_][Rep_][Ii_, Ji_] := If[VtildePMCString[Rep] != "", 
+ConstructVtildePMBasis[pm_][Rep_][Ii_, Ji_] := If[CMessage[Rep][8, 1] != "", 
      Sum[Wfcn[slndimf[Rep]][[ai]]*VtildePMCoeffs[pm][Rep][Ii, Ji][[ai,mu,nu]]*
        \[Omega][slndimf[Rep]][Mod[ai, Num\[Omega]f[Rep]]] \[CircleTimes] 
         \[Rho][Mod[mu, 4], Mod[nu, 4]], {ai, 1, Num\[Omega]f[Rep]}, 
-      {mu, 1, 4}, {nu, 1, 4}], VtildePMCMessage[Rep]]
+      {mu, 1, 4}, {nu, 1, 4}], CMessage[Rep][8, 2]]
  
 coordinates = {t, x, y, z}
  
 DeletewlString[MAC] = 
-    "C:\\Users\\kstiffle\\AppData\\Roaming\\Mathematica/Applications/Adinkra.\
-wl"
+    "C:\\Users\\kstif\\AppData\\Roaming\\Mathematica/Applications/Adinkra.wl"
  
-DeletewlString[PC] = "C:\\Users\\kstiffle\\AppData\\Roaming\\Mathematica\\App\
-lications\\Adinkra.wl"
+DeletewlString[PC] = 
+    "C:\\Users\\kstif\\AppData\\Roaming\\Mathematica\\Applications\\Adinkra.w\
+l"
  
 DOWN = 2
  
@@ -2879,9 +2879,10 @@ RCoeffs[Rep][II], CheckRCoeffs[Rep], VCoeffs[Rep][II,JJ], CheckVCoeffs[Rep], \
 VtildeCoeffs[Rep][II,JJ], CheckVtildeCoeffs[Rep], VPMCoeffs[pm][Rep][II,JJ], \
 CheckVPMCoeffs[pm][Rep], VtildePMCoeffs[pm][Rep][II,JJ], \
 CheckVtildePMCoeffs[pm][Rep], NumberNonZero[LCoeffsMat], \
-CoeffsSummaryReport[Rep], CoeffsFullReport[Rep_]\n\nPrint Functions:\n \
-PrintSigmaProduct[Matrix], PrintBasis[Matrix], PrintLBasis[Rep][II], \
-PrintRBasis[Rep][II], PrintGALRBasis[Rep][II,JJ], PrintGARLBasis[Rep][II,JJ], \
+CoeffsSummaryReport[Rep], CoeffsFullReport[Rep], \
+CMessage[Rep][mi,si]\n\nPrint Functions:\n PrintSigmaProduct[Matrix], \
+PrintBasis[Matrix], PrintLBasis[Rep][II], PrintRBasis[Rep][II], \
+PrintGALRBasis[Rep][II,JJ], PrintGARLBasis[Rep][II,JJ], \
 PrintVBasis[Rep][II,JJ], PrintVtildeBasis[Rep][II,JJ], \
 PrintVPMBasis[pm][Rep][II,JJ], PrintVtildePMBasis[pm][Rep][II,JJ], \
 PrintLSigmaProduct[Rep], \
@@ -2964,8 +2965,8 @@ CheckLCoeffs[Rep], RCoeffs[Rep][II], CheckRCoeffs[Rep], VCoeffs[Rep][II,JJ], \
 CheckVCoeffs[Rep], VtildeCoeffs[Rep][II,JJ], CheckVtildeCoeffs[Rep], \
 VPMCoeffs[pm][Rep][II,JJ], CheckVPMCoeffs[pm][Rep], \
 VtildePMCoeffs[pm][Rep][II,JJ], CheckVtildePMCoeffs[pm][Rep], \
-NumberNonZero[LCoeffsMat], CoeffsSummaryReport[Rep], \
-CoeffsFullReport[Rep_]\n\nPrint Functions:\n PrintSigmaProduct[Matrix], \
+NumberNonZero[LCoeffsMat], CoeffsSummaryReport[Rep], CoeffsFullReport[Rep], \
+CMessage[Rep][mi,si]\n\nPrint Functions:\n PrintSigmaProduct[Matrix], \
 PrintBasis[Matrix], PrintLBasis[Rep][II], PrintRBasis[Rep][II], \
 PrintGALRBasis[Rep][II,JJ], PrintGARLBasis[Rep][II,JJ], \
 PrintVBasis[Rep][II,JJ], PrintVtildeBasis[Rep][II,JJ], \
@@ -3059,7 +3060,7 @@ GenerateAdinkraData[Rep_] := If[CorrectDimensions[Rep],
              {ai, 1, 2}]; Do[VtildePM[pmList[[ai]]][Rep] = 
               Table[VtildePMterms[pmList[[ai]]][Rep][Ii, Ji], {Ii, 1, 
                 NColors[Rep]}, {Ji, 1, NColors[Rep]}], {ai, 1, 2}]; 
-            Print[StringJoin["chi0, ncis, ntrans, VPM[pm], VtildePm[pm], ", 
+            Print[StringJoin["chi0, ncis, ntrans, VPM[pm], VtildePM[pm], ", 
               GeneralNPrintString[Rep]]]; }; , 
          Print[GeneralNPrintString[Rep]]; ]}; , 
      "IncorrectDimensions, No Data Generated"]
@@ -3132,61 +3133,62 @@ GenerateCoeffs[Rep_] :=
     {If[SquareMatrixQ[L[Rep][[1]]] && Mod[dbosons[Rep], 4] == 0, 
        {Do[LCoeffs[Rep][Ii] = Table[Coeffs[dbosons[Rep]][L[Rep][[Ii]]][ai, 
             mu, nu], {ai, 1, Num\[Omega]b[Rep]}, {mu, 1, 4}, {nu, 1, 4}], 
-         {Ii, 1, NColors[Rep]}], LCString[Rep] = "LCoeffs, "}, 
-       {LCString[Rep] = "", LCMessage[Rep] = 
+         {Ii, 1, NColors[Rep]}], CMessage[Rep][1, 1] = "LCoeffs, "}, 
+       {CMessage[Rep][1, 1] = "", CMessage[Rep][1, 2] = 
          "\!\(\*SubscriptBox[\(L\), \(I\)]\) are not 4n x 4n square matrices"}\
 ]; If[SquareMatrixQ[R[Rep][[1]]] && Mod[dfermions[Rep], 4] == 0, 
        {Do[RCoeffs[Rep][Ii] = Table[Coeffs[dbosons[Rep]][R[Rep][[Ii]]][ai, 
             mu, nu], {ai, 1, Num\[Omega]f[Rep]}, {mu, 1, 4}, {nu, 1, 4}], 
-         {Ii, 1, NColors[Rep]}], RCString[Rep] = "RCoeffs, "}, 
-       {RCString[Rep] = "", RCMessage[Rep] = 
+         {Ii, 1, NColors[Rep]}], CMessage[Rep][2, 1] = "RCoeffs, "}, 
+       {CMessage[Rep][2, 1] = "", CMessage[Rep][2, 2] = 
          "\!\(\*SubscriptBox[\(R\), \(I\)]\) are not 4n x 4n square matrices"}\
 ]; If[Mod[dbosons[Rep], 4] == 0, {Do[GALRCoeffs[Rep][Ii, Ji] = 
           Table[Coeffs[dbosons[Rep]][GALR[Rep][[Ii,Ji]]][ai, mu, nu], 
            {ai, 1, Num\[Omega]b[Rep]}, {mu, 1, 4}, {nu, 1, 4}], 
          {Ii, 1, NColors[Rep]}, {Ji, Ii, NColors[Rep]}], 
-        GALRCString[Rep] = "GALRCoeffs, "}, {GALRCString[Rep] = "", 
-        GALRCMessage[Rep] = "\!\(\*SubscriptBox[\(L\), \
+        CMessage[Rep][3, 1] = "GALRCoeffs, "}, {CMessage[Rep][3, 1] = "", 
+        CMessage[Rep][3, 2] = "\!\(\*SubscriptBox[\(L\), \
 \(I\)]\)\!\(\*SubscriptBox[\(R\), \(J\)]\) are not 4n x 4n square matrices"}]\
 ; If[Mod[dfermions[Rep], 4] == 0, {Do[GARLCoeffs[Rep][Ii, Ji] = 
           Table[Coeffs[dfermions[Rep]][GARL[Rep][[Ii,Ji]]][ai, mu, nu], 
            {ai, 1, Num\[Omega]f[Rep]}, {mu, 1, 4}, {nu, 1, 4}], 
          {Ii, 1, NColors[Rep]}, {Ji, Ii, NColors[Rep]}], 
-        GARLCString[Rep] = "GARLCoeffs, "}, {GARLCString[Rep] = "", 
-        GARLCMessage[Rep] = "\!\(\*SubscriptBox[\(R\), \
+        CMessage[Rep][4, 1] = "GARLCoeffs, "}, {CMessage[Rep][4, 1] = "", 
+        CMessage[Rep][4, 2] = "\!\(\*SubscriptBox[\(R\), \
 \(I\)]\)\!\(\*SubscriptBox[\(L\), \(J\)]\) are not 4n x 4n square matrices"}]\
 ; If[Mod[dbosons[Rep], 4] == 0, {Do[VCoeffs[Rep][Ii, Ji] = 
           Table[Coeffs[dbosons[Rep]][V[Rep][[Ii,Ji]]][ai, mu, nu], 
            {ai, 1, Num\[Omega]b[Rep]}, {mu, 1, 4}, {nu, 1, 4}], 
          {Ii, 1, NColors[Rep] - 1}, {Ji, Ii + 1, NColors[Rep]}], 
-        VCString[Rep] = "VCoeffs, "}, {VCString[Rep] = "", 
-        VCMessage[Rep] = 
+        CMessage[Rep][5, 1] = "VCoeffs, "}, {CMessage[Rep][5, 1] = "", 
+        CMessage[Rep][5, 2] = 
          "\!\(\*SubscriptBox[\(V\), \(IJ\)]\) are not 4n x 4n square \
 matrices"}]; If[Mod[dfermions[Rep], 4] == 0, 
        {Do[VtildeCoeffs[Rep][Ii, Ji] = Table[Coeffs[dfermions[Rep]][
              Vtilde[Rep][[Ii,Ji]]][ai, mu, nu], {ai, 1, Num\[Omega]f[Rep]}, 
            {mu, 1, 4}, {nu, 1, 4}], {Ii, 1, NColors[Rep] - 1}, 
-         {Ji, Ii + 1, NColors[Rep]}], VtildeCString[Rep] = "VtildeCoeffs, "}, 
-       {VtildeCString[Rep] = "", VtildeCMessage[Rep] = "\!\(\*SubscriptBox[Ov\
-erscriptBox[\(V\), \(~\)], \(IJ\)]\) are not 4n x 4n square matrices"}]; 
-      If[Mod[dbosons[Rep], 4] == 0 && NColors[Rep] == 4, 
-       {Do[VPMCoeffs[pm][Rep][Ii, Ji] = Table[Coeffs[dbosons[Rep]][
-             VPM[pm][Rep][[Ii,Ji]]][ai, mu, nu], {ai, 1, Num\[Omega]b[Rep]}, 
-           {mu, 1, 4}, {nu, 1, 4}], {pm, {-1, 1}}, {Ii, 1, 2}, 
-         {Ji, Ii + 1, 3}], VPMCString[Rep] = "VPMCoeffs, "}, 
-       {VPMCString[Rep] = "", VPMCMessage[Rep] = "\!\(\*SubsuperscriptBox[\(V\
-\), \(IJ\), \(+-\)]\) are not 4n x 4n square matrices and/or N \[NotEqual] 4"}\
-]; If[Mod[dfermions[Rep], 4] == 0 && NColors[Rep] == 4, 
-       {Do[VtildePMCoeffs[pm][Rep][Ii, Ji] = 
+         {Ji, Ii + 1, NColors[Rep]}], CMessage[Rep][6, 1] = 
+         "VtildeCoeffs, "}, {CMessage[Rep][6, 1] = "", CMessage[Rep][6, 2] = 
+         "\!\(\*SubscriptBox[OverscriptBox[\(V\), \(~\)], \(IJ\)]\) are not \
+4n x 4n square matrices"}]; If[Mod[dbosons[Rep], 4] == 0 && 
+        NColors[Rep] == 4, {Do[VPMCoeffs[pm][Rep][Ii, Ji] = 
+          Table[Coeffs[dbosons[Rep]][VPM[pm][Rep][[Ii,Ji]]][ai, mu, nu], 
+           {ai, 1, Num\[Omega]b[Rep]}, {mu, 1, 4}, {nu, 1, 4}], 
+         {pm, {-1, 1}}, {Ii, 1, 2}, {Ji, Ii + 1, 3}], CMessage[Rep][7, 1] = 
+         "VPMCoeffs, "}, {CMessage[Rep][7, 1] = "", CMessage[Rep][7, 2] = "\!\
+\(\*SubsuperscriptBox[\(V\), \(IJ\), \(+-\)]\) are not 4n x 4n square \
+matrices and/or N \[NotEqual] 4"}]; If[Mod[dfermions[Rep], 4] == 0 && 
+        NColors[Rep] == 4, {Do[VtildePMCoeffs[pm][Rep][Ii, Ji] = 
           Table[Coeffs[dfermions[Rep]][VtildePM[pm][Rep][[Ii,Ji]]][ai, mu, 
             nu], {ai, 1, Num\[Omega]f[Rep]}, {mu, 1, 4}, {nu, 1, 4}], 
-         {pm, {-1, 1}}, {Ii, 1, 2}, {Ji, Ii + 1, 3}], VtildePMCString[Rep] = 
-         "and VtildePMCoeffs"}, {VtildePMCString[Rep] = "", 
-        VtildePMCMessage[Rep] = "\!\(\*SubsuperscriptBox[OverscriptBox[\(V\), \
-\(~\)], \(IJ\), \(+-\)]\) are not 4n x 4n square matrices and/or N \
-\[NotEqual] 4"}]; StringJoin[LCString[Rep], RCString[Rep], GALRCString[Rep], 
-       GARLCString[Rep], VCString[Rep], VtildeCString[Rep], VPMCString[Rep], 
-       VtildePMCString[Rep], " are loaded for Rep = ", ToString[Rep]]}
+         {pm, {-1, 1}}, {Ii, 1, 2}, {Ji, Ii + 1, 3}], CMessage[Rep][8, 1] = 
+         "VtildePMCoeffs"}, {CMessage[Rep][8, 1] = "", CMessage[Rep][8, 2] = 
+         "\!\(\*SubsuperscriptBox[OverscriptBox[\(V\), \(~\)], \(IJ\), \
+\(+-\)]\) are not 4n x 4n square matrices and/or N \[NotEqual] 4"}]; 
+      StringJoin[CMessage[Rep][1, 1], CMessage[Rep][2, 1], 
+       CMessage[Rep][3, 1], CMessage[Rep][4, 1], CMessage[Rep][5, 1], 
+       CMessage[Rep][6, 1], CMessage[Rep][7, 1], CMessage[Rep][8, 1], 
+       " and CMessage[Rep][mi,si] are loaded for Rep = ", ToString[Rep]]}
  
 H = {{{1, 0, 0, 0}, {0, 1, 0, 0}, {0, 0, 1, 0}, {0, 0, 0, 1}}, 
      {{-1, 0, 0, 0}, {0, -1, 0, 0}, {0, 0, 1, 0}, {0, 0, 0, 1}}, 
@@ -3249,9 +3251,15 @@ IndexRange[BasisDecomposition][ahat] = "1,2,3"
  
 IndexRange[BasisDecomposition][d] = "dbosons[Rep] or dfermions[Rep]"
  
+IndexRange[BasisDecomposition][mi] = 
+    "mi = 1(L), 2(R), 3(GALR), 4(GARL), 5(V), 6(Vtilde), 7(VPM), 8(VtildePM)"
+ 
 IndexRange[BasisDecomposition][mu] = "0(4),1,2,3"
  
 IndexRange[BasisDecomposition][n] = "n = d/4, the n in sl(n)"
+ 
+IndexRange[BasisDecomposition][si] = 
+    "si := 1(check string), 2(message string)"
  
 IndexRange[BC4Tools][a] = 
     "1,2,3,4,5,6,7,8 for Table, 0,12,13,23,1,2,3,123 for Perm"
@@ -3283,7 +3291,7 @@ Lap[Field_] := -D[Field, t, t] + D[Field, x, x] + D[Field, y, y] +
  
 Attributes[layerlengths$] = {Temporary}
  
-MachineType = MAC
+MachineType = PC
  
 MetersToFeet[Meters_] := Meters*(39.4/12)
  
