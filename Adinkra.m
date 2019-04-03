@@ -1511,7 +1511,7 @@ BosonGadget[Rep1_, Rep2_] := Simplify[
       (-(1/VScaleFactor^2))*Sum[Tr[V[Rep1][[Ii,Ji]] . V[Rep2][[Ii,Ji]]], 
        {Ii, 1, NColors[Rep1]}, {Ji, 1, NColors[Rep1]}]]
  
-BuildDate[Adinkra] = 190304
+BuildDate[Adinkra] = 190403
  
 buildrules[list_] := Module[{rules = {}, layerlengths := 
        Map[Length, list, {1}]}, For[i = 1, i <= Length[list], i++, 
@@ -3821,6 +3821,102 @@ VList = {V, Vtilde}
 \[Gamma]5\[Gamma]\[Gamma]down[3, 3] = {{0, 0, -I, 0}, {0, 0, 0, -I}, 
      {I, 0, 0, 0}, {0, I, 0, 0}}
  
+\[Gamma]5\[Gamma]\[Gamma]stdownstdown[0, 0] = {{0, 0, 0, -I}, {0, 0, I, 0}, 
+     {0, -I, 0, 0}, {I, 0, 0, 0}}
+ 
+\[Gamma]5\[Gamma]\[Gamma]stdownstdown[0, 1] = {{0, 0, 0, -I}, {0, 0, -I, 0}, 
+     {0, I, 0, 0}, {I, 0, 0, 0}}
+ 
+\[Gamma]5\[Gamma]\[Gamma]stdownstdown[0, 2] = {{0, -I, 0, 0}, {I, 0, 0, 0}, 
+     {0, 0, 0, -I}, {0, 0, I, 0}}
+ 
+\[Gamma]5\[Gamma]\[Gamma]stdownstdown[0, 3] = {{0, 0, -I, 0}, {0, 0, 0, I}, 
+     {I, 0, 0, 0}, {0, -I, 0, 0}}
+ 
+\[Gamma]5\[Gamma]\[Gamma]stdownstdown[1, 0] = {{0, 0, 0, I}, {0, 0, I, 0}, 
+     {0, -I, 0, 0}, {-I, 0, 0, 0}}
+ 
+\[Gamma]5\[Gamma]\[Gamma]stdownstdown[1, 1] = {{0, 0, 0, I}, {0, 0, -I, 0}, 
+     {0, I, 0, 0}, {-I, 0, 0, 0}}
+ 
+\[Gamma]5\[Gamma]\[Gamma]stdownstdown[1, 2] = {{0, I, 0, 0}, {I, 0, 0, 0}, 
+     {0, 0, 0, -I}, {0, 0, -I, 0}}
+ 
+\[Gamma]5\[Gamma]\[Gamma]stdownstdown[1, 3] = {{0, 0, I, 0}, {0, 0, 0, I}, 
+     {I, 0, 0, 0}, {0, I, 0, 0}}
+ 
+\[Gamma]5\[Gamma]\[Gamma]stdownstdown[2, 0] = {{0, I, 0, 0}, {-I, 0, 0, 0}, 
+     {0, 0, 0, I}, {0, 0, -I, 0}}
+ 
+\[Gamma]5\[Gamma]\[Gamma]stdownstdown[2, 1] = {{0, -I, 0, 0}, {-I, 0, 0, 0}, 
+     {0, 0, 0, I}, {0, 0, I, 0}}
+ 
+\[Gamma]5\[Gamma]\[Gamma]stdownstdown[2, 2] = {{0, 0, 0, I}, {0, 0, -I, 0}, 
+     {0, I, 0, 0}, {-I, 0, 0, 0}}
+ 
+\[Gamma]5\[Gamma]\[Gamma]stdownstdown[2, 3] = {{-I, 0, 0, 0}, {0, I, 0, 0}, 
+     {0, 0, I, 0}, {0, 0, 0, -I}}
+ 
+\[Gamma]5\[Gamma]\[Gamma]stdownstdown[3, 0] = {{0, 0, I, 0}, {0, 0, 0, -I}, 
+     {-I, 0, 0, 0}, {0, I, 0, 0}}
+ 
+\[Gamma]5\[Gamma]\[Gamma]stdownstdown[3, 1] = {{0, 0, -I, 0}, {0, 0, 0, -I}, 
+     {-I, 0, 0, 0}, {0, -I, 0, 0}}
+ 
+\[Gamma]5\[Gamma]\[Gamma]stdownstdown[3, 2] = {{I, 0, 0, 0}, {0, -I, 0, 0}, 
+     {0, 0, -I, 0}, {0, 0, 0, I}}
+ 
+\[Gamma]5\[Gamma]\[Gamma]stdownstdown[3, 3] = {{0, 0, 0, I}, {0, 0, -I, 0}, 
+     {0, I, 0, 0}, {-I, 0, 0, 0}}
+ 
+\[Gamma]5\[Gamma]\[Gamma]stdownstdowndown[0, 0] = 
+    {{0, 0, I, 0}, {0, 0, 0, I}, {-I, 0, 0, 0}, {0, -I, 0, 0}}
+ 
+\[Gamma]5\[Gamma]\[Gamma]stdownstdowndown[0, 1] = 
+    {{0, 0, I, 0}, {0, 0, 0, -I}, {I, 0, 0, 0}, {0, -I, 0, 0}}
+ 
+\[Gamma]5\[Gamma]\[Gamma]stdownstdowndown[0, 2] = 
+    {{-I, 0, 0, 0}, {0, -I, 0, 0}, {0, 0, I, 0}, {0, 0, 0, I}}
+ 
+\[Gamma]5\[Gamma]\[Gamma]stdownstdowndown[0, 3] = 
+    {{0, 0, 0, -I}, {0, 0, -I, 0}, {0, -I, 0, 0}, {-I, 0, 0, 0}}
+ 
+\[Gamma]5\[Gamma]\[Gamma]stdownstdowndown[1, 0] = 
+    {{0, 0, -I, 0}, {0, 0, 0, I}, {-I, 0, 0, 0}, {0, I, 0, 0}}
+ 
+\[Gamma]5\[Gamma]\[Gamma]stdownstdowndown[1, 1] = 
+    {{0, 0, -I, 0}, {0, 0, 0, -I}, {I, 0, 0, 0}, {0, I, 0, 0}}
+ 
+\[Gamma]5\[Gamma]\[Gamma]stdownstdowndown[1, 2] = 
+    {{I, 0, 0, 0}, {0, -I, 0, 0}, {0, 0, I, 0}, {0, 0, 0, -I}}
+ 
+\[Gamma]5\[Gamma]\[Gamma]stdownstdowndown[1, 3] = 
+    {{0, 0, 0, I}, {0, 0, -I, 0}, {0, -I, 0, 0}, {I, 0, 0, 0}}
+ 
+\[Gamma]5\[Gamma]\[Gamma]stdownstdowndown[2, 0] = 
+    {{I, 0, 0, 0}, {0, I, 0, 0}, {0, 0, -I, 0}, {0, 0, 0, -I}}
+ 
+\[Gamma]5\[Gamma]\[Gamma]stdownstdowndown[2, 1] = 
+    {{-I, 0, 0, 0}, {0, I, 0, 0}, {0, 0, -I, 0}, {0, 0, 0, I}}
+ 
+\[Gamma]5\[Gamma]\[Gamma]stdownstdowndown[2, 2] = 
+    {{0, 0, -I, 0}, {0, 0, 0, -I}, {I, 0, 0, 0}, {0, I, 0, 0}}
+ 
+\[Gamma]5\[Gamma]\[Gamma]stdownstdowndown[2, 3] = 
+    {{0, I, 0, 0}, {I, 0, 0, 0}, {0, 0, 0, I}, {0, 0, I, 0}}
+ 
+\[Gamma]5\[Gamma]\[Gamma]stdownstdowndown[3, 0] = 
+    {{0, 0, 0, I}, {0, 0, I, 0}, {0, I, 0, 0}, {I, 0, 0, 0}}
+ 
+\[Gamma]5\[Gamma]\[Gamma]stdownstdowndown[3, 1] = 
+    {{0, 0, 0, -I}, {0, 0, I, 0}, {0, I, 0, 0}, {-I, 0, 0, 0}}
+ 
+\[Gamma]5\[Gamma]\[Gamma]stdownstdowndown[3, 2] = 
+    {{0, -I, 0, 0}, {-I, 0, 0, 0}, {0, 0, 0, -I}, {0, 0, -I, 0}}
+ 
+\[Gamma]5\[Gamma]\[Gamma]stdownstdowndown[3, 3] = 
+    {{0, 0, -I, 0}, {0, 0, 0, -I}, {I, 0, 0, 0}, {0, I, 0, 0}}
+ 
 \[Gamma]5\[Gamma]\[Gamma]stdownstup[0, 0] = {{0, 0, 0, I}, {0, 0, -I, 0}, 
      {0, I, 0, 0}, {-I, 0, 0, 0}}
  
@@ -4192,6 +4288,102 @@ VList = {V, Vtilde}
  
 \[Gamma]\[Gamma]down[3, 3] = {{0, -1, 0, 0}, {1, 0, 0, 0}, {0, 0, 0, 1}, {0, 
     0, -1, 0}}
+ 
+\[Gamma]\[Gamma]stdownstdown[0, 0] = {{-1, 0, 0, 0}, {0, -1, 0, 0}, {0, 0, 
+    -1, 0}, {0, 0, 0, -1}}
+ 
+\[Gamma]\[Gamma]stdownstdown[0, 1] = {{-1, 0, 0, 0}, {0, 1, 0, 0}, {0, 0, 1, 
+    0}, {0, 0, 0, -1}}
+ 
+\[Gamma]\[Gamma]stdownstdown[0, 2] = {{0, 0, -1, 0}, {0, 0, 0, -1}, {-1, 0, 
+    0, 0}, {0, -1, 0, 0}}
+ 
+\[Gamma]\[Gamma]stdownstdown[0, 3] = {{0, 1, 0, 0}, {1, 0, 0, 0}, {0, 0, 0, 
+    -1}, {0, 0, -1, 0}}
+ 
+\[Gamma]\[Gamma]stdownstdown[1, 0] = {{1, 0, 0, 0}, {0, -1, 0, 0}, {0, 0, -1, 
+    0}, {0, 0, 0, 1}}
+ 
+\[Gamma]\[Gamma]stdownstdown[1, 1] = {{1, 0, 0, 0}, {0, 1, 0, 0}, {0, 0, 1, 
+    0}, {0, 0, 0, 1}}
+ 
+\[Gamma]\[Gamma]stdownstdown[1, 2] = {{0, 0, 1, 0}, {0, 0, 0, -1}, {-1, 0, 0, 
+    0}, {0, 1, 0, 0}}
+ 
+\[Gamma]\[Gamma]stdownstdown[1, 3] = {{0, -1, 0, 0}, {1, 0, 0, 0}, {0, 0, 0, 
+    -1}, {0, 0, 1, 0}}
+ 
+\[Gamma]\[Gamma]stdownstdown[2, 0] = {{0, 0, 1, 0}, {0, 0, 0, 1}, {1, 0, 0, 
+    0}, {0, 1, 0, 0}}
+ 
+\[Gamma]\[Gamma]stdownstdown[2, 1] = {{0, 0, -1, 0}, {0, 0, 0, 1}, {1, 0, 0, 
+    0}, {0, -1, 0, 0}}
+ 
+\[Gamma]\[Gamma]stdownstdown[2, 2] = {{1, 0, 0, 0}, {0, 1, 0, 0}, {0, 0, 1, 
+    0}, {0, 0, 0, 1}}
+ 
+\[Gamma]\[Gamma]stdownstdown[2, 3] = {{0, 0, 0, 1}, {0, 0, 1, 0}, {0, -1, 0, 
+    0}, {-1, 0, 0, 0}}
+ 
+\[Gamma]\[Gamma]stdownstdown[3, 0] = {{0, -1, 0, 0}, {-1, 0, 0, 0}, {0, 0, 0, 
+    1}, {0, 0, 1, 0}}
+ 
+\[Gamma]\[Gamma]stdownstdown[3, 1] = {{0, 1, 0, 0}, {-1, 0, 0, 0}, {0, 0, 0, 
+    1}, {0, 0, -1, 0}}
+ 
+\[Gamma]\[Gamma]stdownstdown[3, 2] = {{0, 0, 0, -1}, {0, 0, -1, 0}, {0, 1, 0, 
+    0}, {1, 0, 0, 0}}
+ 
+\[Gamma]\[Gamma]stdownstdown[3, 3] = {{1, 0, 0, 0}, {0, 1, 0, 0}, {0, 0, 1, 
+    0}, {0, 0, 0, 1}}
+ 
+\[Gamma]\[Gamma]stdownstdowndown[0, 0] = {{0, 1, 0, 0}, {-1, 0, 0, 0}, {0, 0, 
+    0, -1}, {0, 0, 1, 0}}
+ 
+\[Gamma]\[Gamma]stdownstdowndown[0, 1] = {{0, 1, 0, 0}, {1, 0, 0, 0}, {0, 0, 
+    0, 1}, {0, 0, 1, 0}}
+ 
+\[Gamma]\[Gamma]stdownstdowndown[0, 2] = {{0, 0, 0, -1}, {0, 0, 1, 0}, {0, 1, 
+    0, 0}, {-1, 0, 0, 0}}
+ 
+\[Gamma]\[Gamma]stdownstdowndown[0, 3] = {{1, 0, 0, 0}, {0, -1, 0, 0}, {0, 0, 
+    1, 0}, {0, 0, 0, -1}}
+ 
+\[Gamma]\[Gamma]stdownstdowndown[1, 0] = {{0, -1, 0, 0}, {-1, 0, 0, 0}, {0, 
+    0, 0, -1}, {0, 0, -1, 0}}
+ 
+\[Gamma]\[Gamma]stdownstdowndown[1, 1] = {{0, -1, 0, 0}, {1, 0, 0, 0}, {0, 0, 
+    0, 1}, {0, 0, -1, 0}}
+ 
+\[Gamma]\[Gamma]stdownstdowndown[1, 2] = {{0, 0, 0, 1}, {0, 0, 1, 0}, {0, 1, 
+    0, 0}, {1, 0, 0, 0}}
+ 
+\[Gamma]\[Gamma]stdownstdowndown[1, 3] = {{-1, 0, 0, 0}, {0, -1, 0, 0}, {0, 
+    0, 1, 0}, {0, 0, 0, 1}}
+ 
+\[Gamma]\[Gamma]stdownstdowndown[2, 0] = {{0, 0, 0, 1}, {0, 0, -1, 0}, {0, 
+    -1, 0, 0}, {1, 0, 0, 0}}
+ 
+\[Gamma]\[Gamma]stdownstdowndown[2, 1] = {{0, 0, 0, -1}, {0, 0, -1, 0}, {0, 
+    -1, 0, 0}, {-1, 0, 0, 0}}
+ 
+\[Gamma]\[Gamma]stdownstdowndown[2, 2] = {{0, -1, 0, 0}, {1, 0, 0, 0}, {0, 0, 
+    0, 1}, {0, 0, -1, 0}}
+ 
+\[Gamma]\[Gamma]stdownstdowndown[2, 3] = {{0, 0, -1, 0}, {0, 0, 0, 1}, {-1, 
+    0, 0, 0}, {0, 1, 0, 0}}
+ 
+\[Gamma]\[Gamma]stdownstdowndown[3, 0] = {{-1, 0, 0, 0}, {0, 1, 0, 0}, {0, 0, 
+    -1, 0}, {0, 0, 0, 1}}
+ 
+\[Gamma]\[Gamma]stdownstdowndown[3, 1] = {{1, 0, 0, 0}, {0, 1, 0, 0}, {0, 0, 
+    -1, 0}, {0, 0, 0, -1}}
+ 
+\[Gamma]\[Gamma]stdownstdowndown[3, 2] = {{0, 0, 1, 0}, {0, 0, 0, -1}, {1, 0, 
+    0, 0}, {0, -1, 0, 0}}
+ 
+\[Gamma]\[Gamma]stdownstdowndown[3, 3] = {{0, -1, 0, 0}, {1, 0, 0, 0}, {0, 0, 
+    0, 1}, {0, 0, -1, 0}}
  
 \[Gamma]\[Gamma]stdownstup[0, 0] = {{1, 0, 0, 0}, {0, 1, 0, 0}, {0, 0, 1, 0}, 
     {0, 0, 0, 1}}
@@ -4944,6 +5136,518 @@ VList = {V, Vtilde}
 \[Epsilon][3, 3, 3, 2] = 0
  
 \[Epsilon][3, 3, 3, 3] = 0
+ 
+\[Epsilon]downdowndownup[0, 0, 0, 0] = 0
+ 
+\[Epsilon]downdowndownup[0, 0, 0, 1] = 0
+ 
+\[Epsilon]downdowndownup[0, 0, 0, 2] = 0
+ 
+\[Epsilon]downdowndownup[0, 0, 0, 3] = 0
+ 
+\[Epsilon]downdowndownup[0, 0, 1, 0] = 0
+ 
+\[Epsilon]downdowndownup[0, 0, 1, 1] = 0
+ 
+\[Epsilon]downdowndownup[0, 0, 1, 2] = 0
+ 
+\[Epsilon]downdowndownup[0, 0, 1, 3] = 0
+ 
+\[Epsilon]downdowndownup[0, 0, 2, 0] = 0
+ 
+\[Epsilon]downdowndownup[0, 0, 2, 1] = 0
+ 
+\[Epsilon]downdowndownup[0, 0, 2, 2] = 0
+ 
+\[Epsilon]downdowndownup[0, 0, 2, 3] = 0
+ 
+\[Epsilon]downdowndownup[0, 0, 3, 0] = 0
+ 
+\[Epsilon]downdowndownup[0, 0, 3, 1] = 0
+ 
+\[Epsilon]downdowndownup[0, 0, 3, 2] = 0
+ 
+\[Epsilon]downdowndownup[0, 0, 3, 3] = 0
+ 
+\[Epsilon]downdowndownup[0, 1, 0, 0] = 0
+ 
+\[Epsilon]downdowndownup[0, 1, 0, 1] = 0
+ 
+\[Epsilon]downdowndownup[0, 1, 0, 2] = 0
+ 
+\[Epsilon]downdowndownup[0, 1, 0, 3] = 0
+ 
+\[Epsilon]downdowndownup[0, 1, 1, 0] = 0
+ 
+\[Epsilon]downdowndownup[0, 1, 1, 1] = 0
+ 
+\[Epsilon]downdowndownup[0, 1, 1, 2] = 0
+ 
+\[Epsilon]downdowndownup[0, 1, 1, 3] = 0
+ 
+\[Epsilon]downdowndownup[0, 1, 2, 0] = 0
+ 
+\[Epsilon]downdowndownup[0, 1, 2, 1] = 0
+ 
+\[Epsilon]downdowndownup[0, 1, 2, 2] = 0
+ 
+\[Epsilon]downdowndownup[0, 1, 2, 3] = 1
+ 
+\[Epsilon]downdowndownup[0, 1, 3, 0] = 0
+ 
+\[Epsilon]downdowndownup[0, 1, 3, 1] = 0
+ 
+\[Epsilon]downdowndownup[0, 1, 3, 2] = -1
+ 
+\[Epsilon]downdowndownup[0, 1, 3, 3] = 0
+ 
+\[Epsilon]downdowndownup[0, 2, 0, 0] = 0
+ 
+\[Epsilon]downdowndownup[0, 2, 0, 1] = 0
+ 
+\[Epsilon]downdowndownup[0, 2, 0, 2] = 0
+ 
+\[Epsilon]downdowndownup[0, 2, 0, 3] = 0
+ 
+\[Epsilon]downdowndownup[0, 2, 1, 0] = 0
+ 
+\[Epsilon]downdowndownup[0, 2, 1, 1] = 0
+ 
+\[Epsilon]downdowndownup[0, 2, 1, 2] = 0
+ 
+\[Epsilon]downdowndownup[0, 2, 1, 3] = -1
+ 
+\[Epsilon]downdowndownup[0, 2, 2, 0] = 0
+ 
+\[Epsilon]downdowndownup[0, 2, 2, 1] = 0
+ 
+\[Epsilon]downdowndownup[0, 2, 2, 2] = 0
+ 
+\[Epsilon]downdowndownup[0, 2, 2, 3] = 0
+ 
+\[Epsilon]downdowndownup[0, 2, 3, 0] = 0
+ 
+\[Epsilon]downdowndownup[0, 2, 3, 1] = 1
+ 
+\[Epsilon]downdowndownup[0, 2, 3, 2] = 0
+ 
+\[Epsilon]downdowndownup[0, 2, 3, 3] = 0
+ 
+\[Epsilon]downdowndownup[0, 3, 0, 0] = 0
+ 
+\[Epsilon]downdowndownup[0, 3, 0, 1] = 0
+ 
+\[Epsilon]downdowndownup[0, 3, 0, 2] = 0
+ 
+\[Epsilon]downdowndownup[0, 3, 0, 3] = 0
+ 
+\[Epsilon]downdowndownup[0, 3, 1, 0] = 0
+ 
+\[Epsilon]downdowndownup[0, 3, 1, 1] = 0
+ 
+\[Epsilon]downdowndownup[0, 3, 1, 2] = 1
+ 
+\[Epsilon]downdowndownup[0, 3, 1, 3] = 0
+ 
+\[Epsilon]downdowndownup[0, 3, 2, 0] = 0
+ 
+\[Epsilon]downdowndownup[0, 3, 2, 1] = -1
+ 
+\[Epsilon]downdowndownup[0, 3, 2, 2] = 0
+ 
+\[Epsilon]downdowndownup[0, 3, 2, 3] = 0
+ 
+\[Epsilon]downdowndownup[0, 3, 3, 0] = 0
+ 
+\[Epsilon]downdowndownup[0, 3, 3, 1] = 0
+ 
+\[Epsilon]downdowndownup[0, 3, 3, 2] = 0
+ 
+\[Epsilon]downdowndownup[0, 3, 3, 3] = 0
+ 
+\[Epsilon]downdowndownup[1, 0, 0, 0] = 0
+ 
+\[Epsilon]downdowndownup[1, 0, 0, 1] = 0
+ 
+\[Epsilon]downdowndownup[1, 0, 0, 2] = 0
+ 
+\[Epsilon]downdowndownup[1, 0, 0, 3] = 0
+ 
+\[Epsilon]downdowndownup[1, 0, 1, 0] = 0
+ 
+\[Epsilon]downdowndownup[1, 0, 1, 1] = 0
+ 
+\[Epsilon]downdowndownup[1, 0, 1, 2] = 0
+ 
+\[Epsilon]downdowndownup[1, 0, 1, 3] = 0
+ 
+\[Epsilon]downdowndownup[1, 0, 2, 0] = 0
+ 
+\[Epsilon]downdowndownup[1, 0, 2, 1] = 0
+ 
+\[Epsilon]downdowndownup[1, 0, 2, 2] = 0
+ 
+\[Epsilon]downdowndownup[1, 0, 2, 3] = -1
+ 
+\[Epsilon]downdowndownup[1, 0, 3, 0] = 0
+ 
+\[Epsilon]downdowndownup[1, 0, 3, 1] = 0
+ 
+\[Epsilon]downdowndownup[1, 0, 3, 2] = 1
+ 
+\[Epsilon]downdowndownup[1, 0, 3, 3] = 0
+ 
+\[Epsilon]downdowndownup[1, 1, 0, 0] = 0
+ 
+\[Epsilon]downdowndownup[1, 1, 0, 1] = 0
+ 
+\[Epsilon]downdowndownup[1, 1, 0, 2] = 0
+ 
+\[Epsilon]downdowndownup[1, 1, 0, 3] = 0
+ 
+\[Epsilon]downdowndownup[1, 1, 1, 0] = 0
+ 
+\[Epsilon]downdowndownup[1, 1, 1, 1] = 0
+ 
+\[Epsilon]downdowndownup[1, 1, 1, 2] = 0
+ 
+\[Epsilon]downdowndownup[1, 1, 1, 3] = 0
+ 
+\[Epsilon]downdowndownup[1, 1, 2, 0] = 0
+ 
+\[Epsilon]downdowndownup[1, 1, 2, 1] = 0
+ 
+\[Epsilon]downdowndownup[1, 1, 2, 2] = 0
+ 
+\[Epsilon]downdowndownup[1, 1, 2, 3] = 0
+ 
+\[Epsilon]downdowndownup[1, 1, 3, 0] = 0
+ 
+\[Epsilon]downdowndownup[1, 1, 3, 1] = 0
+ 
+\[Epsilon]downdowndownup[1, 1, 3, 2] = 0
+ 
+\[Epsilon]downdowndownup[1, 1, 3, 3] = 0
+ 
+\[Epsilon]downdowndownup[1, 2, 0, 0] = 0
+ 
+\[Epsilon]downdowndownup[1, 2, 0, 1] = 0
+ 
+\[Epsilon]downdowndownup[1, 2, 0, 2] = 0
+ 
+\[Epsilon]downdowndownup[1, 2, 0, 3] = 1
+ 
+\[Epsilon]downdowndownup[1, 2, 1, 0] = 0
+ 
+\[Epsilon]downdowndownup[1, 2, 1, 1] = 0
+ 
+\[Epsilon]downdowndownup[1, 2, 1, 2] = 0
+ 
+\[Epsilon]downdowndownup[1, 2, 1, 3] = 0
+ 
+\[Epsilon]downdowndownup[1, 2, 2, 0] = 0
+ 
+\[Epsilon]downdowndownup[1, 2, 2, 1] = 0
+ 
+\[Epsilon]downdowndownup[1, 2, 2, 2] = 0
+ 
+\[Epsilon]downdowndownup[1, 2, 2, 3] = 0
+ 
+\[Epsilon]downdowndownup[1, 2, 3, 0] = 1
+ 
+\[Epsilon]downdowndownup[1, 2, 3, 1] = 0
+ 
+\[Epsilon]downdowndownup[1, 2, 3, 2] = 0
+ 
+\[Epsilon]downdowndownup[1, 2, 3, 3] = 0
+ 
+\[Epsilon]downdowndownup[1, 3, 0, 0] = 0
+ 
+\[Epsilon]downdowndownup[1, 3, 0, 1] = 0
+ 
+\[Epsilon]downdowndownup[1, 3, 0, 2] = -1
+ 
+\[Epsilon]downdowndownup[1, 3, 0, 3] = 0
+ 
+\[Epsilon]downdowndownup[1, 3, 1, 0] = 0
+ 
+\[Epsilon]downdowndownup[1, 3, 1, 1] = 0
+ 
+\[Epsilon]downdowndownup[1, 3, 1, 2] = 0
+ 
+\[Epsilon]downdowndownup[1, 3, 1, 3] = 0
+ 
+\[Epsilon]downdowndownup[1, 3, 2, 0] = -1
+ 
+\[Epsilon]downdowndownup[1, 3, 2, 1] = 0
+ 
+\[Epsilon]downdowndownup[1, 3, 2, 2] = 0
+ 
+\[Epsilon]downdowndownup[1, 3, 2, 3] = 0
+ 
+\[Epsilon]downdowndownup[1, 3, 3, 0] = 0
+ 
+\[Epsilon]downdowndownup[1, 3, 3, 1] = 0
+ 
+\[Epsilon]downdowndownup[1, 3, 3, 2] = 0
+ 
+\[Epsilon]downdowndownup[1, 3, 3, 3] = 0
+ 
+\[Epsilon]downdowndownup[2, 0, 0, 0] = 0
+ 
+\[Epsilon]downdowndownup[2, 0, 0, 1] = 0
+ 
+\[Epsilon]downdowndownup[2, 0, 0, 2] = 0
+ 
+\[Epsilon]downdowndownup[2, 0, 0, 3] = 0
+ 
+\[Epsilon]downdowndownup[2, 0, 1, 0] = 0
+ 
+\[Epsilon]downdowndownup[2, 0, 1, 1] = 0
+ 
+\[Epsilon]downdowndownup[2, 0, 1, 2] = 0
+ 
+\[Epsilon]downdowndownup[2, 0, 1, 3] = 1
+ 
+\[Epsilon]downdowndownup[2, 0, 2, 0] = 0
+ 
+\[Epsilon]downdowndownup[2, 0, 2, 1] = 0
+ 
+\[Epsilon]downdowndownup[2, 0, 2, 2] = 0
+ 
+\[Epsilon]downdowndownup[2, 0, 2, 3] = 0
+ 
+\[Epsilon]downdowndownup[2, 0, 3, 0] = 0
+ 
+\[Epsilon]downdowndownup[2, 0, 3, 1] = -1
+ 
+\[Epsilon]downdowndownup[2, 0, 3, 2] = 0
+ 
+\[Epsilon]downdowndownup[2, 0, 3, 3] = 0
+ 
+\[Epsilon]downdowndownup[2, 1, 0, 0] = 0
+ 
+\[Epsilon]downdowndownup[2, 1, 0, 1] = 0
+ 
+\[Epsilon]downdowndownup[2, 1, 0, 2] = 0
+ 
+\[Epsilon]downdowndownup[2, 1, 0, 3] = -1
+ 
+\[Epsilon]downdowndownup[2, 1, 1, 0] = 0
+ 
+\[Epsilon]downdowndownup[2, 1, 1, 1] = 0
+ 
+\[Epsilon]downdowndownup[2, 1, 1, 2] = 0
+ 
+\[Epsilon]downdowndownup[2, 1, 1, 3] = 0
+ 
+\[Epsilon]downdowndownup[2, 1, 2, 0] = 0
+ 
+\[Epsilon]downdowndownup[2, 1, 2, 1] = 0
+ 
+\[Epsilon]downdowndownup[2, 1, 2, 2] = 0
+ 
+\[Epsilon]downdowndownup[2, 1, 2, 3] = 0
+ 
+\[Epsilon]downdowndownup[2, 1, 3, 0] = -1
+ 
+\[Epsilon]downdowndownup[2, 1, 3, 1] = 0
+ 
+\[Epsilon]downdowndownup[2, 1, 3, 2] = 0
+ 
+\[Epsilon]downdowndownup[2, 1, 3, 3] = 0
+ 
+\[Epsilon]downdowndownup[2, 2, 0, 0] = 0
+ 
+\[Epsilon]downdowndownup[2, 2, 0, 1] = 0
+ 
+\[Epsilon]downdowndownup[2, 2, 0, 2] = 0
+ 
+\[Epsilon]downdowndownup[2, 2, 0, 3] = 0
+ 
+\[Epsilon]downdowndownup[2, 2, 1, 0] = 0
+ 
+\[Epsilon]downdowndownup[2, 2, 1, 1] = 0
+ 
+\[Epsilon]downdowndownup[2, 2, 1, 2] = 0
+ 
+\[Epsilon]downdowndownup[2, 2, 1, 3] = 0
+ 
+\[Epsilon]downdowndownup[2, 2, 2, 0] = 0
+ 
+\[Epsilon]downdowndownup[2, 2, 2, 1] = 0
+ 
+\[Epsilon]downdowndownup[2, 2, 2, 2] = 0
+ 
+\[Epsilon]downdowndownup[2, 2, 2, 3] = 0
+ 
+\[Epsilon]downdowndownup[2, 2, 3, 0] = 0
+ 
+\[Epsilon]downdowndownup[2, 2, 3, 1] = 0
+ 
+\[Epsilon]downdowndownup[2, 2, 3, 2] = 0
+ 
+\[Epsilon]downdowndownup[2, 2, 3, 3] = 0
+ 
+\[Epsilon]downdowndownup[2, 3, 0, 0] = 0
+ 
+\[Epsilon]downdowndownup[2, 3, 0, 1] = 1
+ 
+\[Epsilon]downdowndownup[2, 3, 0, 2] = 0
+ 
+\[Epsilon]downdowndownup[2, 3, 0, 3] = 0
+ 
+\[Epsilon]downdowndownup[2, 3, 1, 0] = 1
+ 
+\[Epsilon]downdowndownup[2, 3, 1, 1] = 0
+ 
+\[Epsilon]downdowndownup[2, 3, 1, 2] = 0
+ 
+\[Epsilon]downdowndownup[2, 3, 1, 3] = 0
+ 
+\[Epsilon]downdowndownup[2, 3, 2, 0] = 0
+ 
+\[Epsilon]downdowndownup[2, 3, 2, 1] = 0
+ 
+\[Epsilon]downdowndownup[2, 3, 2, 2] = 0
+ 
+\[Epsilon]downdowndownup[2, 3, 2, 3] = 0
+ 
+\[Epsilon]downdowndownup[2, 3, 3, 0] = 0
+ 
+\[Epsilon]downdowndownup[2, 3, 3, 1] = 0
+ 
+\[Epsilon]downdowndownup[2, 3, 3, 2] = 0
+ 
+\[Epsilon]downdowndownup[2, 3, 3, 3] = 0
+ 
+\[Epsilon]downdowndownup[3, 0, 0, 0] = 0
+ 
+\[Epsilon]downdowndownup[3, 0, 0, 1] = 0
+ 
+\[Epsilon]downdowndownup[3, 0, 0, 2] = 0
+ 
+\[Epsilon]downdowndownup[3, 0, 0, 3] = 0
+ 
+\[Epsilon]downdowndownup[3, 0, 1, 0] = 0
+ 
+\[Epsilon]downdowndownup[3, 0, 1, 1] = 0
+ 
+\[Epsilon]downdowndownup[3, 0, 1, 2] = -1
+ 
+\[Epsilon]downdowndownup[3, 0, 1, 3] = 0
+ 
+\[Epsilon]downdowndownup[3, 0, 2, 0] = 0
+ 
+\[Epsilon]downdowndownup[3, 0, 2, 1] = 1
+ 
+\[Epsilon]downdowndownup[3, 0, 2, 2] = 0
+ 
+\[Epsilon]downdowndownup[3, 0, 2, 3] = 0
+ 
+\[Epsilon]downdowndownup[3, 0, 3, 0] = 0
+ 
+\[Epsilon]downdowndownup[3, 0, 3, 1] = 0
+ 
+\[Epsilon]downdowndownup[3, 0, 3, 2] = 0
+ 
+\[Epsilon]downdowndownup[3, 0, 3, 3] = 0
+ 
+\[Epsilon]downdowndownup[3, 1, 0, 0] = 0
+ 
+\[Epsilon]downdowndownup[3, 1, 0, 1] = 0
+ 
+\[Epsilon]downdowndownup[3, 1, 0, 2] = 1
+ 
+\[Epsilon]downdowndownup[3, 1, 0, 3] = 0
+ 
+\[Epsilon]downdowndownup[3, 1, 1, 0] = 0
+ 
+\[Epsilon]downdowndownup[3, 1, 1, 1] = 0
+ 
+\[Epsilon]downdowndownup[3, 1, 1, 2] = 0
+ 
+\[Epsilon]downdowndownup[3, 1, 1, 3] = 0
+ 
+\[Epsilon]downdowndownup[3, 1, 2, 0] = 1
+ 
+\[Epsilon]downdowndownup[3, 1, 2, 1] = 0
+ 
+\[Epsilon]downdowndownup[3, 1, 2, 2] = 0
+ 
+\[Epsilon]downdowndownup[3, 1, 2, 3] = 0
+ 
+\[Epsilon]downdowndownup[3, 1, 3, 0] = 0
+ 
+\[Epsilon]downdowndownup[3, 1, 3, 1] = 0
+ 
+\[Epsilon]downdowndownup[3, 1, 3, 2] = 0
+ 
+\[Epsilon]downdowndownup[3, 1, 3, 3] = 0
+ 
+\[Epsilon]downdowndownup[3, 2, 0, 0] = 0
+ 
+\[Epsilon]downdowndownup[3, 2, 0, 1] = -1
+ 
+\[Epsilon]downdowndownup[3, 2, 0, 2] = 0
+ 
+\[Epsilon]downdowndownup[3, 2, 0, 3] = 0
+ 
+\[Epsilon]downdowndownup[3, 2, 1, 0] = -1
+ 
+\[Epsilon]downdowndownup[3, 2, 1, 1] = 0
+ 
+\[Epsilon]downdowndownup[3, 2, 1, 2] = 0
+ 
+\[Epsilon]downdowndownup[3, 2, 1, 3] = 0
+ 
+\[Epsilon]downdowndownup[3, 2, 2, 0] = 0
+ 
+\[Epsilon]downdowndownup[3, 2, 2, 1] = 0
+ 
+\[Epsilon]downdowndownup[3, 2, 2, 2] = 0
+ 
+\[Epsilon]downdowndownup[3, 2, 2, 3] = 0
+ 
+\[Epsilon]downdowndownup[3, 2, 3, 0] = 0
+ 
+\[Epsilon]downdowndownup[3, 2, 3, 1] = 0
+ 
+\[Epsilon]downdowndownup[3, 2, 3, 2] = 0
+ 
+\[Epsilon]downdowndownup[3, 2, 3, 3] = 0
+ 
+\[Epsilon]downdowndownup[3, 3, 0, 0] = 0
+ 
+\[Epsilon]downdowndownup[3, 3, 0, 1] = 0
+ 
+\[Epsilon]downdowndownup[3, 3, 0, 2] = 0
+ 
+\[Epsilon]downdowndownup[3, 3, 0, 3] = 0
+ 
+\[Epsilon]downdowndownup[3, 3, 1, 0] = 0
+ 
+\[Epsilon]downdowndownup[3, 3, 1, 1] = 0
+ 
+\[Epsilon]downdowndownup[3, 3, 1, 2] = 0
+ 
+\[Epsilon]downdowndownup[3, 3, 1, 3] = 0
+ 
+\[Epsilon]downdowndownup[3, 3, 2, 0] = 0
+ 
+\[Epsilon]downdowndownup[3, 3, 2, 1] = 0
+ 
+\[Epsilon]downdowndownup[3, 3, 2, 2] = 0
+ 
+\[Epsilon]downdowndownup[3, 3, 2, 3] = 0
+ 
+\[Epsilon]downdowndownup[3, 3, 3, 0] = 0
+ 
+\[Epsilon]downdowndownup[3, 3, 3, 1] = 0
+ 
+\[Epsilon]downdowndownup[3, 3, 3, 2] = 0
+ 
+\[Epsilon]downdowndownup[3, 3, 3, 3] = 0
  
 \[Epsilon]downdownupup[0, 0, 0, 0] = 0
  
