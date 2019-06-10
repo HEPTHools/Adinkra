@@ -4,7 +4,7 @@
 
 Click on the download link above. Save to your local machine by either
 
-* Right (command) clicking the above download link and saving to your local hard drive.
+* Right (control) clicking the above download link and saving to your local hard drive.
 
 * Copying the raw text stored at the above link into a text editor and saving with only a .m extension.
 
