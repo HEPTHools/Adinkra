@@ -682,13 +682,33 @@ AdinkraSummaryReport[Rep_] := AdinkraReport[Rep, 6]
  
 AdinkraViolet = RGBColor[0.42352942, 0.15294118, 0.4509804]
  
-adjacencyToEdge[mat_, col_] := 
+adjacencyToEdge[Pre12, mat_, col_] := 
     Select[Flatten[Table[If[mat[[i,j]] =!= 0, {i -> j, mat[[i,j]]*col}, {}], 
        {i, 1, Length[mat]}, {j, 1, Length[mat]}], 1], #1 =!= {} & ]
+ 
+adjacencyToEdge[TwelvePlus, mat_, col_] := 
+    Select[Flatten[Table[If[mat[[i,j]] =!= 0, {UndirectedEdge[i, j], 
+         mat[[i,j]]*col}, {}], {i, 1, Length[mat]}, {j, 1, Length[mat]}], 1], 
+     #1 =!= {} & ]
+ 
+adjacencyToEdge[mat_, col_] := adjacencyToEdge[VerSwitch, mat, col]
  
 i = 3
  
 j = 5
+ 
+VerSwitch = TwelvePlus
+ 
+AdjacencyToEdgeList[Rep_] := Table[AdjacencyToEdgeListColored[Rep][[EIndex,
+      1]], {EIndex, 1, Length[AdjacencyToEdgeListColored[Rep]]}]
+ 
+AdjacencyToEdgeListColored[Rep_] := 
+    Sort[Join[adjacencyToEdge[padLmatrix[L[Rep][[1]]], 1], 
+      adjacencyToEdge[padLmatrix[L[Rep][[2]]], 2], 
+      adjacencyToEdge[padLmatrix[L[Rep][[3]]], 3], 
+      adjacencyToEdge[padLmatrix[L[Rep][[4]]], 4]]]
+ 
+padLmatrix[L_] := Transpose[ArrayPad[L, {{4, 0}, {0, 4}}]]
  
 AlphaBetaToLogicCode = {\[Alpha][1] -> 1, \[Alpha][2] -> 2, \[Alpha][3] -> 3, 
      \[Beta][1] -> 4, \[Beta][2] -> 5, \[Beta][3] -> 6}
@@ -2729,6 +2749,11 @@ l"
  
 DOWN = 2
  
+EdgeStyleList[Rep_] := Table[AdjacencyToEdgeListColored[Rep][[EIndex,1]] -> 
+      Switch[AdjacencyToEdgeListColored[Rep][[EIndex,2]], 1, Color1, 2, 
+       Color2, 3, Color3, 4, Color4, -1, Color1, -2, Color2, -3, Color3, -4, 
+       Color4], {EIndex, 1, Length[AdjacencyToEdgeListColored[Rep]]}]
+ 
 ell[Rep_][TildeIndex_, ahat_][Ii_, Ji_] := 
     (-I)*(Tr[su2matrix[TildeIndex, ahat] . Vtilde[Rep][[Ii,Ji]]]/
       (4*VtildeScaleFactor))
@@ -2748,27 +2773,8 @@ su2matrix[2, 3] = {{0, -I, 0, 0}, {I, 0, 0, 0}, {0, 0, 0, I}, {0, 0, -I, 0}}
 ExportAdinkra[Rep_, raise_, filename_] := Export[filename, 
      GraphAdinkra[Rep, raise]]
  
-GraphAdinkra[Rep_] := GraphPlot[
-     Sort[Join[adjacencyToEdge[padLmatrix[L[Rep][[1]]], 1], 
-       adjacencyToEdge[padLmatrix[L[Rep][[2]]], 2], adjacencyToEdge[
-        padLmatrix[L[Rep][[3]]], 3], adjacencyToEdge[padLmatrix[L[Rep][[4]]], 
-        4]]], EdgeRenderingFunction -> 
-      (Switch[#3, 1, {Color1, Thickness[0.007], Line[#1]}, -1, 
-        {Color1, Dashing[0.03], Thickness[0.007], Line[#1]}, 2, 
-        {Color2, Thickness[0.007], Line[#1]}, -2, {Color2, Dashing[0.03], 
-         Thickness[0.007], Line[#1]}, 3, {Color3, Thickness[0.007], 
-         Line[#1]}, -3, {Color3, Dashing[0.03], Thickness[0.007], Line[#1]}, 
-        4, {Color4, Thickness[0.007], Line[#1]}, -4, {Color4, Dashing[0.03], 
-         Thickness[0.007], Line[#1]}] & ), VertexRenderingFunction -> 
-      (If[#2 <= 4, Inset[Graphics[{Black, EdgeForm[Black], 
-           Disk[{0, 0}, 0.05], White, Text[Style[#2, Bold, Larger], {0, 0}]}, 
-          ImageSize -> 30], #1], Inset[Graphics[{White, EdgeForm[Black], 
-           Disk[{0, 0}, 0.05], Black, Text[Style[#2 - 4, Bold, Larger], 
-            {0, 0}]}, ImageSize -> 30], #1]] & ), VertexCoordinateRules -> 
-      Valise]
- 
-GraphAdinkra[Rep_, raise_] := GraphPlot[
-     Sort[Join[adjacencyToEdge[padLmatrix[L[Rep][[1]]], 1], 
+GraphAdinkra[Pre12, Rep_, raise_] := 
+    GraphPlot[Sort[Join[adjacencyToEdge[padLmatrix[L[Rep][[1]]], 1], 
        adjacencyToEdge[padLmatrix[L[Rep][[2]]], 2], adjacencyToEdge[
         padLmatrix[L[Rep][[3]]], 3], adjacencyToEdge[padLmatrix[L[Rep][[4]]], 
         4]]], EdgeRenderingFunction -> 
@@ -2786,7 +2792,17 @@ GraphAdinkra[Rep_, raise_] := GraphPlot[
             {0, 0}]}, ImageSize -> 30], #1]] & ), VertexCoordinateRules -> 
       raise]
  
-padLmatrix[L_] := Transpose[ArrayPad[L, {{4, 0}, {0, 4}}]]
+GraphAdinkra[TwelvePlus, Rep_, raise_] := GraphPlot[AdjacencyToEdgeList[Rep], 
+     EdgeStyle -> EdgeStyleList[Rep], VertexShapeFunction -> 
+      (If[#2 <= 4, Inset[Graphics[{Black, EdgeForm[Black], 
+           Disk[{0, 0}, 0.05], White, Text[Style[#2, Bold, Larger], {0, 0}]}, 
+          ImageSize -> 30], #1], Inset[Graphics[{White, EdgeForm[Black], 
+           Disk[{0, 0}, 0.05], Black, Text[Style[#2 - 4, Bold, Larger], 
+            {0, 0}]}, ImageSize -> 30], #1]] & ), VertexCoordinates -> raise]
+ 
+GraphAdinkra[Rep_, Raise_] := GraphAdinkra[VerSwitch, Rep, Raise]
+ 
+GraphAdinkra[Rep_] := GraphAdinkra[Rep, Valise]
  
 Valise = {1 -> {-3/2, -1}, 2 -> {-1/2, -1}, 3 -> {1/2, -1}, 4 -> {3/2, -1}, 
      5 -> {-3/2, -2}, 6 -> {-1/2, -2}, 7 -> {1/2, -2}, 8 -> {3/2, -2}}
@@ -2905,10 +2921,10 @@ de],L[RepCode]\n\n***********************************************************\
 ******************************************\n\nGraphingTools:\nIndexRange[Grap\
 hingTools][list]\n\n AdinkraGreen, AdinkraViolet, AdinkraOrange, AdinkraRed, \
 padLmatrix[L], adjacencyToEdge[mat,col], buildrules[list], Valise, \
-GraphAdinkra[L], GraphAdinkra[L,BuildRules[list], \
-ExportAdinkra[L,BuildRules[list],filename]\n\n*******************************\
-*********************************************************\n******************\
-**********************************************************************"
+GraphAdinkra[Rep], GraphAdinkra[Rep,BuildRules[list], \
+ExportAdinkra[Rep,BuildRules[list],filename]\n\n*****************************\
+***********************************************************\n****************\
+************************************************************************"
  
 FunctionList[AdinkraEssentials] = "IndexRange[AdinkraEssentials][Index], \
 Index = p1, II, ReportLevel, or pm\n\n***IMPORTANT****: Default Settings are \
@@ -2999,11 +3015,11 @@ RTable[DColor,Phi,Psi],GenerateLandR[DColor,Phi,Psi,Rep]\n\n*****************\
  
 FunctionList[GraphingTools] = "IndexRange[GraphingTools][list]\n\n \
 AdinkraGreen, AdinkraViolet, AdinkraOrange, AdinkraRed, padLmatrix[L], \
-adjacencyToEdge[mat,col], buildrules[list], Valise, GraphAdinkra[L], \
-GraphAdinkra[L,BuildRules[list], \
-ExportAdinkra[L,BuildRules[list],filename]\n\n*******************************\
-*********************************************************\n******************\
-**********************************************************************"
+adjacencyToEdge[mat,col], buildrules[list], Valise, GraphAdinkra[Rep], \
+GraphAdinkra[Rep,BuildRules[list], \
+ExportAdinkra[Rep,BuildRules[list],filename]\n\n*****************************\
+***********************************************************\n****************\
+************************************************************************"
  
 FunctionList[SpaceTime] = "IndexRange[SpaceTime][Index], Index = mu, a, or \
 RaiseCode\n\ncoordinates, \[CapitalStigma][mu], \[Eta][mu,nu], \
