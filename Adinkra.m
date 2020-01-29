@@ -683,19 +683,15 @@ AdinkraSummaryReport[Rep_] := AdinkraReport[Rep, 6]
 AdinkraViolet = RGBColor[0.42352942, 0.15294118, 0.4509804]
  
 adjacencyToEdge[Pre12, mat_, col_] := 
-    Select[Flatten[Table[If[mat[[i,j]] =!= 0, {i -> j, mat[[i,j]]*col}, {}], 
-       {i, 1, Length[mat]}, {j, 1, Length[mat]}], 1], #1 =!= {} & ]
+    Select[Flatten[Table[If[mat[[ii,jj]] =!= 0, {ii -> jj, mat[[ii,jj]]*col}, 
+        {}], {ii, 1, Length[mat]}, {jj, 1, Length[mat]}], 1], #1 =!= {} & ]
  
 adjacencyToEdge[TwelvePlus, mat_, col_] := 
-    Select[Flatten[Table[If[mat[[i,j]] =!= 0, {UndirectedEdge[i, j], 
-         mat[[i,j]]*col}, {}], {i, 1, Length[mat]}, {j, 1, Length[mat]}], 1], 
-     #1 =!= {} & ]
+    Select[Flatten[Table[If[mat[[ii,jj]] =!= 0, {UndirectedEdge[ii, jj], 
+         mat[[ii,jj]]*col}, {}], {ii, 1, Length[mat]}, {jj, 1, Length[mat]}], 
+      1], #1 =!= {} & ]
  
 adjacencyToEdge[mat_, col_] := adjacencyToEdge[VerSwitch, mat, col]
- 
-i = 3
- 
-j = 5
  
 VerSwitch = TwelvePlus
  
@@ -1531,14 +1527,14 @@ BosonGadget[Rep1_, Rep2_] := Simplify[
       (-(1/VScaleFactor^2))*Sum[Tr[V[Rep1][[Ii,Ji]] . V[Rep2][[Ii,Ji]]], 
        {Ii, 1, NColors[Rep1]}, {Ji, 1, NColors[Rep1]}]]
  
-BuildDate[Adinkra] = 190403
+BuildDate[Adinkra] = 200129
  
 buildrules[list_] := Module[{rules = {}, layerlengths := 
-       Map[Length, list, {1}]}, For[i = 1, i <= Length[list], i++, 
-       For[j = 1, j <= layerlengths[[i]], j++, AppendTo[rules, 
-         list[[i]][[j]] -> {Range[1 - Mean[Range[layerlengths[[i]]]], 
-             layerlengths[[i]] + 1 - layerlengths[[i]]/2][[j]], -i}]]]; 
-      Return[rules]]
+       Map[Length, list, {1}]}, For[ii = 1, ii <= Length[list], ii++, 
+       For[jj = 1, jj <= layerlengths[[ii]], jj++, AppendTo[rules, 
+         list[[ii]][[jj]] -> {Range[1 - Mean[Range[layerlengths[[ii]]]], 
+             layerlengths[[ii]] + 1 - layerlengths[[ii]]/2][[jj]], -ii}]]]; 
+      Clear[ii, jj]; Return[rules]]
  
 CheckGALRCoeffs[Rep_] := If[CMessage[Rep][3, 1] != "", 
      Simplify[Table[GALR[Rep][[Ii,Ji]], {Ii, 1, NColors[Rep]}, 
