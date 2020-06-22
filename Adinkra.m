@@ -1527,7 +1527,7 @@ BosonGadget[Rep1_, Rep2_] := Simplify[
       (-(1/VScaleFactor^2))*Sum[Tr[V[Rep1][[Ii,Ji]] . V[Rep2][[Ii,Ji]]], 
        {Ii, 1, NColors[Rep1]}, {Ji, 1, NColors[Rep1]}]]
  
-BuildDate[Adinkra] = 200129
+BuildDate[Adinkra] = 200622
  
 buildrules[list_] := Module[{rules = {}, layerlengths := 
        Map[Length, list, {1}]}, For[ii = 1, ii <= Length[list], ii++, 
@@ -2737,18 +2737,22 @@ ConstructVtildePMBasis[pm_][Rep_][Ii_, Ji_] := If[CMessage[Rep][8, 1] != "",
 coordinates = {t, x, y, z}
  
 DeletewlString[MAC] = 
-    "C:\\Users\\kstif\\AppData\\Roaming\\Mathematica/Applications/Adinkra.wl"
+    "/Users/kstiffle/Library/Mathematica/Applications/Adinkra.wl"
  
 DeletewlString[PC] = 
-    "C:\\Users\\kstif\\AppData\\Roaming\\Mathematica\\Applications\\Adinkra.w\
-l"
+    "/Users/kstiffle/Library/Mathematica\\Applications\\Adinkra.wl"
  
 DOWN = 2
  
+EdgeShapeFunctionList[Rep_] := Table[AdjacencyToEdgeListColored[Rep][[DIndex,
+       1]] -> Switch[Sign[AdjacencyToEdgeListColored[Rep][[DIndex,2]]], -1, 
+       "DashedLine", 1, "Line"], {DIndex, 1, 
+      Length[AdjacencyToEdgeListColored[Rep]]}]
+ 
 EdgeStyleList[Rep_] := Table[AdjacencyToEdgeListColored[Rep][[EIndex,1]] -> 
-      Switch[AdjacencyToEdgeListColored[Rep][[EIndex,2]], 1, Color1, 2, 
-       Color2, 3, Color3, 4, Color4, -1, Color1, -2, Color2, -3, Color3, -4, 
-       Color4], {EIndex, 1, Length[AdjacencyToEdgeListColored[Rep]]}]
+      {Switch[AdjacencyToEdgeListColored[Rep][[EIndex,2]], 1, Color1, 2, 
+        Color2, 3, Color3, 4, Color4, -1, Color1, -2, Color2, -3, Color3, -4, 
+        Color4], Thick}, {EIndex, 1, Length[AdjacencyToEdgeListColored[Rep]]}]
  
 ell[Rep_][TildeIndex_, ahat_][Ii_, Ji_] := 
     (-I)*(Tr[su2matrix[TildeIndex, ahat] . Vtilde[Rep][[Ii,Ji]]]/
@@ -2794,7 +2798,8 @@ GraphAdinkra[TwelvePlus, Rep_, raise_] := GraphPlot[AdjacencyToEdgeList[Rep],
            Disk[{0, 0}, 0.05], White, Text[Style[#2, Bold, Larger], {0, 0}]}, 
           ImageSize -> 30], #1], Inset[Graphics[{White, EdgeForm[Black], 
            Disk[{0, 0}, 0.05], Black, Text[Style[#2 - 4, Bold, Larger], 
-            {0, 0}]}, ImageSize -> 30], #1]] & ), VertexCoordinates -> raise]
+            {0, 0}]}, ImageSize -> 30], #1]] & ), EdgeShapeFunction -> 
+      EdgeShapeFunctionList[Rep], VertexCoordinates -> raise]
  
 GraphAdinkra[Rep_, Raise_] := GraphAdinkra[VerSwitch, Rep, Raise]
  
@@ -3303,7 +3308,7 @@ Lap[Field_] := -D[Field, t, t] + D[Field, x, x] + D[Field, y, y] +
  
 Attributes[layerlengths$] = {Temporary}
  
-MachineType = PC
+MachineType = MAC
  
 MetersToFeet[Meters_] := Meters*(39.4/12)
  
