@@ -782,20 +782,20 @@ Basis[di_][ai_, mu_, nu_] := ArrayFlatten[Outer[Times,
  
 \[Omega]matrix[3][1] = {{0, 1/(2*nz[3]), 0}, {1/(2*nz[3]), 0, 0}, {0, 0, 0}}
  
-\[Omega]matrix[3][2] = {{0, -1/(2*nz[3]), 0}, {1/(2*nz[3]), 0, 0}, {0, 0, 0}}
+\[Omega]matrix[3][2] = {{0, -1/2*1/nz[3], 0}, {1/(2*nz[3]), 0, 0}, {0, 0, 0}}
  
-\[Omega]matrix[3][3] = {{1/(2*nz[3]), 0, 0}, {0, -1/(2*nz[3]), 0}, {0, 0, 0}}
+\[Omega]matrix[3][3] = {{1/(2*nz[3]), 0, 0}, {0, -1/2*1/nz[3], 0}, {0, 0, 0}}
  
 \[Omega]matrix[3][4] = {{0, 0, 1/(2*nz[3])}, {0, 0, 0}, {1/(2*nz[3]), 0, 0}}
  
-\[Omega]matrix[3][5] = {{0, 0, -1/(2*nz[3])}, {0, 0, 0}, {1/(2*nz[3]), 0, 0}}
+\[Omega]matrix[3][5] = {{0, 0, -1/2*1/nz[3]}, {0, 0, 0}, {1/(2*nz[3]), 0, 0}}
  
 \[Omega]matrix[3][6] = {{0, 0, 0}, {0, 0, 1/(2*nz[3])}, {0, 1/(2*nz[3]), 0}}
  
-\[Omega]matrix[3][7] = {{0, 0, 0}, {0, 0, -1/(2*nz[3])}, {0, 1/(2*nz[3]), 0}}
+\[Omega]matrix[3][7] = {{0, 0, 0}, {0, 0, -1/2*1/nz[3]}, {0, 1/(2*nz[3]), 0}}
  
 \[Omega]matrix[3][8] = {{1/(6*nz[3]), 0, 0}, {0, 1/(6*nz[3]), 0}, 
-     {0, 0, -1/(3*nz[3])}}
+     {0, 0, -1/3*1/nz[3]}}
  
 \[Omega]matrix[3][9] = {{1/(3*nz[3]), 0, 0}, {0, 1/(3*nz[3]), 0}, 
      {0, 0, 1/(3*nz[3])}}
@@ -807,77 +807,77 @@ Basis[di_][ai_, mu_, nu_] := ArrayFlatten[Outer[Times,
 \[Omega]matrix[5][1] = {{0, 1/(2*nz[5]), 0, 0, 0}, {1/(2*nz[5]), 0, 0, 0, 0}, 
      {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}}
  
-\[Omega]matrix[5][2] = {{0, -1/(2*nz[5]), 0, 0, 0}, 
+\[Omega]matrix[5][2] = {{0, -1/2*1/nz[5], 0, 0, 0}, 
      {1/(2*nz[5]), 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, 
      {0, 0, 0, 0, 0}}
  
-\[Omega]matrix[5][3] = {{1/(2*nz[5]), 0, 0, 0, 0}, {0, -1/(2*nz[5]), 0, 0, 
+\[Omega]matrix[5][3] = {{1/(2*nz[5]), 0, 0, 0, 0}, {0, -1/2*1/nz[5], 0, 0, 
       0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}}
  
 \[Omega]matrix[5][4] = {{0, 0, 1/(2*nz[5]), 0, 0}, {0, 0, 0, 0, 0}, 
      {1/(2*nz[5]), 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}}
  
-\[Omega]matrix[5][5] = {{0, 0, -1/(2*nz[5]), 0, 0}, {0, 0, 0, 0, 0}, 
+\[Omega]matrix[5][5] = {{0, 0, -1/2*1/nz[5], 0, 0}, {0, 0, 0, 0, 0}, 
      {1/(2*nz[5]), 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}}
  
 \[Omega]matrix[5][6] = {{0, 0, 0, 0, 0}, {0, 0, 1/(2*nz[5]), 0, 0}, 
      {0, 1/(2*nz[5]), 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}}
  
-\[Omega]matrix[5][7] = {{0, 0, 0, 0, 0}, {0, 0, -1/(2*nz[5]), 0, 0}, 
+\[Omega]matrix[5][7] = {{0, 0, 0, 0, 0}, {0, 0, -1/2*1/nz[5], 0, 0}, 
      {0, 1/(2*nz[5]), 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}}
  
 \[Omega]matrix[5][8] = {{1/(6*nz[5]), 0, 0, 0, 0}, {0, 1/(6*nz[5]), 0, 0, 0}, 
-     {0, 0, -1/(3*nz[5]), 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}}
+     {0, 0, -1/3*1/nz[5], 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}}
  
 \[Omega]matrix[5][9] = {{0, 0, 0, 1/(2*nz[5]), 0}, {0, 0, 0, 0, 0}, 
      {0, 0, 0, 0, 0}, {1/(2*nz[5]), 0, 0, 0, 0}, {0, 0, 0, 0, 0}}
  
-\[Omega]matrix[5][10] = {{0, 0, 0, -1/(2*nz[5]), 0}, {0, 0, 0, 0, 0}, 
+\[Omega]matrix[5][10] = {{0, 0, 0, -1/2*1/nz[5], 0}, {0, 0, 0, 0, 0}, 
      {0, 0, 0, 0, 0}, {1/(2*nz[5]), 0, 0, 0, 0}, {0, 0, 0, 0, 0}}
  
 \[Omega]matrix[5][11] = {{0, 0, 0, 0, 0}, {0, 0, 0, 1/(2*nz[5]), 0}, 
      {0, 0, 0, 0, 0}, {0, 1/(2*nz[5]), 0, 0, 0}, {0, 0, 0, 0, 0}}
  
-\[Omega]matrix[5][12] = {{0, 0, 0, 0, 0}, {0, 0, 0, -1/(2*nz[5]), 0}, 
+\[Omega]matrix[5][12] = {{0, 0, 0, 0, 0}, {0, 0, 0, -1/2*1/nz[5], 0}, 
      {0, 0, 0, 0, 0}, {0, 1/(2*nz[5]), 0, 0, 0}, {0, 0, 0, 0, 0}}
  
 \[Omega]matrix[5][13] = {{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, 
      {0, 0, 0, 1/(2*nz[5]), 0}, {0, 0, 1/(2*nz[5]), 0, 0}, {0, 0, 0, 0, 0}}
  
 \[Omega]matrix[5][14] = {{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, 
-     {0, 0, 0, -1/(2*nz[5]), 0}, {0, 0, 1/(2*nz[5]), 0, 0}, {0, 0, 0, 0, 0}}
+     {0, 0, 0, -1/2*1/nz[5], 0}, {0, 0, 1/(2*nz[5]), 0, 0}, {0, 0, 0, 0, 0}}
  
 \[Omega]matrix[5][15] = {{1/(12*nz[5]), 0, 0, 0, 0}, 
      {0, 1/(12*nz[5]), 0, 0, 0}, {0, 0, 1/(12*nz[5]), 0, 0}, 
-     {0, 0, 0, -1/(4*nz[5]), 0}, {0, 0, 0, 0, 0}}
+     {0, 0, 0, -1/4*1/nz[5], 0}, {0, 0, 0, 0, 0}}
  
 \[Omega]matrix[5][16] = {{0, 0, 0, 0, 1/(2*nz[5])}, {0, 0, 0, 0, 0}, 
      {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {1/(2*nz[5]), 0, 0, 0, 0}}
  
-\[Omega]matrix[5][17] = {{0, 0, 0, 0, -1/(2*nz[5])}, {0, 0, 0, 0, 0}, 
+\[Omega]matrix[5][17] = {{0, 0, 0, 0, -1/2*1/nz[5]}, {0, 0, 0, 0, 0}, 
      {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {1/(2*nz[5]), 0, 0, 0, 0}}
  
 \[Omega]matrix[5][18] = {{0, 0, 0, 0, 0}, {0, 0, 0, 0, 1/(2*nz[5])}, 
      {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 1/(2*nz[5]), 0, 0, 0}}
  
-\[Omega]matrix[5][19] = {{0, 0, 0, 0, 0}, {0, 0, 0, 0, -1/(2*nz[5])}, 
+\[Omega]matrix[5][19] = {{0, 0, 0, 0, 0}, {0, 0, 0, 0, -1/2*1/nz[5]}, 
      {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 1/(2*nz[5]), 0, 0, 0}}
  
 \[Omega]matrix[5][20] = {{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, 
      {0, 0, 0, 0, 1/(2*nz[5])}, {0, 0, 0, 0, 0}, {0, 0, 1/(2*nz[5]), 0, 0}}
  
 \[Omega]matrix[5][21] = {{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, 
-     {0, 0, 0, 0, -1/(2*nz[5])}, {0, 0, 0, 0, 0}, {0, 0, 1/(2*nz[5]), 0, 0}}
+     {0, 0, 0, 0, -1/2*1/nz[5]}, {0, 0, 0, 0, 0}, {0, 0, 1/(2*nz[5]), 0, 0}}
  
 \[Omega]matrix[5][22] = {{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, 
      {0, 0, 0, 0, 1/(2*nz[5])}, {0, 0, 0, 1/(2*nz[5]), 0}}
  
 \[Omega]matrix[5][23] = {{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, 
-     {0, 0, 0, 0, -1/(2*nz[5])}, {0, 0, 0, 1/(2*nz[5]), 0}}
+     {0, 0, 0, 0, -1/2*1/nz[5]}, {0, 0, 0, 1/(2*nz[5]), 0}}
  
 \[Omega]matrix[5][24] = {{1/(20*nz[5]), 0, 0, 0, 0}, 
      {0, 1/(20*nz[5]), 0, 0, 0}, {0, 0, 1/(20*nz[5]), 0, 0}, 
-     {0, 0, 0, 1/(20*nz[5]), 0}, {0, 0, 0, 0, -1/(5*nz[5])}}
+     {0, 0, 0, 1/(20*nz[5]), 0}, {0, 0, 0, 0, -1/5*1/nz[5]}}
  
 \[Omega]matrix[5][25] = {{1/(5*nz[5]), 0, 0, 0, 0}, 
      {0, 1/(5*nz[5]), 0, 0, 0}, {0, 0, 1/(5*nz[5]), 0, 0}, 
@@ -1527,7 +1527,7 @@ BosonGadget[Rep1_, Rep2_] := Simplify[
       (-(1/VScaleFactor^2))*Sum[Tr[V[Rep1][[Ii,Ji]] . V[Rep2][[Ii,Ji]]], 
        {Ii, 1, NColors[Rep1]}, {Ji, 1, NColors[Rep1]}]]
  
-BuildDate[Adinkra] = 200622
+BuildDate[Adinkra] = 220305
  
 buildrules[list_] := Module[{rules = {}, layerlengths := 
        Map[Length, list, {1}]}, For[ii = 1, ii <= Length[list], ii++, 
@@ -2655,8 +2655,6 @@ SigmaProductCoeffs[Matrix_][mu1_, mu2_, mu3_, mu4_, mu5_, mu6_, mu7_] :=
     Simplify[(1/2^7)*Tr[SigmaProduct[mu1, mu2, mu3, mu4, mu5, mu6, mu7] . 
         Matrix]]
  
-Attributes[Subscript] = {NHoldRest}
- 
 \[Sigma][0, 0] = {{0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}}
  
 \[Sigma][0, 1] = {{I, 0, 0, 0}, {0, -I, 0, 0}, {0, 0, -I, 0}, {0, 0, 0, I}}
@@ -3052,10 +3050,14 @@ Gadget[Rep1_, Rep2_] := Simplify[(1/(dmin[NColors[Rep1]]*NColors[Rep1]*
  
 GATerms[L_, R_][II_, JJ_] := L[[II]] . R[[JJ]] + L[[JJ]] . R[[II]]
  
-GeneralNPrintString[Rep_] := StringJoin["L, R, GALR, GARL, V, Vtilde, \
-ZetaGen, Holoraumy[Rep], Monodromy[Rep], ZetatildeGen, Holoraumytilde[Rep], \
-Monodromytilde[Rep], cSoln[V], cSoln[Vtilde] are loaded for Rep = ", 
-     ToString[Rep]]
+GeneralNPrintString[Rep_, MonodromyIsToBeGenerated_] := 
+    If[MonodromyIsToBeGenerated, StringJoin["L, R, GALR, GARL, V, Vtilde, \
+ZetaGen, Holoraumy, Monodromy, ZetatildeGen, Holoraumytilde, Monodromytilde, \
+cSoln[V[Rep]], cSoln[Vtilde[Rep]] are loaded for Rep = ", ToString[Rep]], 
+     StringJoin["L, R, GALR, GARL, V, Vtilde, cSoln[V[Rep]], \
+cSoln[Vtilde[Rep]] are loaded for Rep = ", ToString[Rep]]]
+ 
+MonodromyIsToBeGenerated = False
  
 GenerateAdinkraData[Rep_] := If[CorrectDimensions[Rep], 
      {GALR[Rep] = Table[GATerms[L[Rep], R[Rep]][II, JJ], 
@@ -3065,11 +3067,12 @@ GenerateAdinkraData[Rep_] := If[CorrectDimensions[Rep],
         V[Rep] = Table[Vterms[Rep][Ii, Ji], {Ii, 1, NColors[Rep]}, 
           {Ji, 1, NColors[Rep]}]; Vtilde[Rep] = 
          Table[Vtildeterms[Rep][Ii, Ji], {Ii, 1, NColors[Rep]}, 
-          {Ji, 1, NColors[Rep]}]; ZetaGen[Rep] = Table[Zetaterms[Rep][Ii], 
-          {Ii, 1, NColors[Rep]}]; ZetatildeGen[Rep] = 
-         Table[Zetatildeterms[Rep][Ii], {Ii, 1, NColors[Rep]}]; 
-        GenerateHoloraumyMonodromy[Rep]; GenerateHoloraumyMonodromytilde[
-         Rep]; LinearlyIndependent[V[Rep]]; LinearlyIndependent[Vtilde[Rep]]; 
+          {Ji, 1, NColors[Rep]}]; If[MonodromyIsToBeGenerated, 
+         {ZetaGen[Rep] = Table[Zetaterms[Rep][Ii], {Ii, 1, NColors[Rep]}]; 
+            ZetatildeGen[Rep] = Table[Zetatildeterms[Rep][Ii], 
+              {Ii, 1, NColors[Rep]}]; GenerateHoloraumyMonodromy[Rep]; 
+            GenerateHoloraumyMonodromytilde[Rep]; }; ]; 
+        LinearlyIndependent[V[Rep]]; LinearlyIndependent[Vtilde[Rep]]; 
         If[NColors[Rep] == 4, {chi0[Rep] = CalculateChi0[Rep]; 
             ncis[Rep] = CalculateNcis[Rep]; ntrans[Rep] = CalculateNtrans[
               Rep]; Do[VPM[pmList[[ai]]][Rep] = Table[VPMterms[pmList[[ai]]][
@@ -3078,8 +3081,8 @@ GenerateAdinkraData[Rep_] := If[CorrectDimensions[Rep],
               Table[VtildePMterms[pmList[[ai]]][Rep][Ii, Ji], {Ii, 1, 
                 NColors[Rep]}, {Ji, 1, NColors[Rep]}], {ai, 1, 2}]; 
             Print[StringJoin["chi0, ncis, ntrans, VPM[pm], VtildePM[pm], ", 
-              GeneralNPrintString[Rep]]]; }; , 
-         Print[GeneralNPrintString[Rep]]; ]}; , 
+              GeneralNPrintString[Rep, MonodromyIsToBeGenerated]]]; }; , 
+         Print[GeneralNPrintString[Rep, MonodromyIsToBeGenerated]]; ]}; , 
      "IncorrectDimensions, No Data Generated"]
  
 GenerateAdinkraData[Rep_, Orthogonal] := 
