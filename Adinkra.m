@@ -440,8 +440,6 @@ dfermions[L_, R_] := Length[L[[1,1]]]
  
 dfermions[Rep_] := dfermions[L[Rep], R[Rep]]
  
-NColors[D_, Phi_, Psi_] := (Length[D[Phi[[1]]]] + Length[D[Psi[[1]]]])/2
- 
 NColors[L_, R_] := Length[L]
  
 NColors[Rep_] := NColors[L[Rep], R[Rep]]
@@ -2836,7 +2834,7 @@ RaiseSTIndex[Field,RaiseCode1,RaiseCode2,...,RaiseCoden], \
 RaiseFermionIndex[Field]\n\n*************************************************\
 ***************************************\n************************************\
 ****************************************************\n\nGenerateLandR:\nNColo\
-rs[D,Phi,Psi], LTable[DColor,Phi,Psi], \
+rs[DColor,PhiOrPsi], LTable[DColor,Phi,Psi], \
 RTable[DColor,Phi,Psi],GenerateLandR[DColor,Phi,Psi,Rep]\n\n*****************\
 ***********************************************************************\n****\
 *****************************************************************************\
@@ -3006,7 +3004,8 @@ de],L[RepCode]\n\n***********************************************************\
 *****************************\n**********************************************\
 ******************************************"
  
-FunctionList[GenerateLandR] = "NColors[D,Phi,Psi], LTable[DColor,Phi,Psi], \
+FunctionList[GenerateLandR] = "NColors[DColor,PhiOrPsi], \
+LTable[DColor,Phi,Psi], \
 RTable[DColor,Phi,Psi],GenerateLandR[DColor,Phi,Psi,Rep]\n\n*****************\
 ***********************************************************************\n****\
 *****************************************************************************\
@@ -3035,12 +3034,12 @@ GenerateLandR[DColor_, Phi_, Psi_, Rep_] :=
  
 LTable[DColor_, Phi_, Psi_] := Simplify[
      Table[Coefficient[DColor[Phi[[iRow]]][[Color]], I*Psi[[jhatColumn]]], 
-      {Color, 1, NColors[DColor, Phi, Psi]}, {iRow, 1, Length[Phi]}, 
+      {Color, 1, Length[DColor[Phi[[1]]]]}, {iRow, 1, Length[Phi]}, 
       {jhatColumn, 1, Length[Psi]}]]
  
 RTable[DColor_, Phi_, Psi_] := Simplify[
      Table[Coefficient[DColor[Psi[[jhatRow]]][[Color]], 
-       D[Phi[[iColumn]], t]], {Color, 1, NColors[DColor, Phi, Psi]}, 
+       D[Phi[[iColumn]], t]], {Color, 1, Length[DColor[Psi[[1]]]]}, 
       {jhatRow, 1, Length[Psi]}, {iColumn, 1, Length[Phi]}]]
  
 Gadget[Rep1_, Rep2_] := Simplify[(1/(dmin[NColors[Rep1]]*NColors[Rep1]*
