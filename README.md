@@ -1,5 +1,3 @@
-Adinkra
-
 ![CMExtended.jpg](/Images/CMExtended.jpg)                          
 
 # [Download Adinkra.m](https://raw.githubusercontent.com/HEPTHools/Adinkra/master/Adinkra.m) 
